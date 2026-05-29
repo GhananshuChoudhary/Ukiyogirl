@@ -5,6 +5,7 @@ import authorPortraitImg from './assets/images/author_portrait_1780045401192.png
 import lakeMistyImg from './assets/images/kashmir_lake_1780045423673.png';
 import valleyGreenImg from './assets/images/kashmir_valley_1780045444779.png';
 import lidderRiverImg from './assets/images/lidder_river_pahalgam_1780083959555.png';
+import chinarAutumnLakeImg from './assets/images/chinar_autumn_lake_1780084819897.png';
 
 // Import our generated assets directly so Vite compiles and serves them on all devices
 export const IMAGES = {
@@ -14,6 +15,7 @@ export const IMAGES = {
   lakeMisty: lakeMistyImg,
   valleyGreen: valleyGreenImg,
   lidderRiver: lidderRiverImg,
+  chinarAutumnLake: chinarAutumnLakeImg,
 };
 
 export const AUTHOR_INFO = {
@@ -269,12 +271,12 @@ export const GALLERY: GalleryImage[] = [
   },
   {
     id: 'gal-6',
-    src: 'https://images.unsplash.com/photo-1542401886-65d6c61db217?auto=format&fit=crop&q=80&w=800',
-    caption: 'Chinar leaves transforming into blazing golden lanterns under the gentle autumn sun.',
-    captionMr: 'शरद ऋतूतील कोवळ्या उन्हात सोन्यासारखी चमकणारी चिनारची पाने.',
+    src: IMAGES.chinarAutumnLake,
+    caption: 'Golden Chinar tree by the mirror-like lake reflecting serenity and the quiet passage of time.',
+    captionMr: 'दर्पणसदृश शांत सरोवराच्या काठावर सोन्यासारखे चकाकणारे चिनारचे झाड, जे सुसंवाद आणि शांततेचे प्रतीक आहे.',
     category: 'Seasons',
     categoryMr: 'बदलणारे ऋतू',
-    aspect: 'square'
+    aspect: 'landscape'
   }
 ];
 
