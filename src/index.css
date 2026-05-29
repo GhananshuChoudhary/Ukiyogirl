@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-kashmir-deep: #1B365D;
+  --color-kashmir-blue: #234575;
+  --color-kashmir-lake: #325A8F;
+  --color-kashmir-mist: #D5E1ED;
+  --color-kashmir-light: #F0F4F8;
+  --color-beige-light: #FDFBF7;
+  --color-beige-warm: #F8F5EE;
+  --color-golden-accent: #C5A478;
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(27, 54, 93, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-light {
+    background: rgba(253, 251, 247, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(27, 54, 93, 0.08);
+  }
+}
+
+/* Base custom resets and scroll styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-beige-light);
+  color: var(--color-kashmir-deep);
+  overflow-x: hidden;
+}
+
+/* Light fog/mist moving animation keyframes */
+@keyframes fogSlowMove {
+  0% {
+    transform: scale(1.05) translate(0px, 0px);
+    opacity: 0.35;
+  }
+  50% {
+    transform: scale(1.1) translate(-20px, 10px);
+    opacity: 0.65;
+  }
+  100% {
+    transform: scale(1.05) translate(0px, 0px);
+    opacity: 0.35;
+  }
+}
+
+.animate-fog-slow {
+  animation: fogSlowMove 35s ease-in-out infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-beige-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-kashmir-mist);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-kashmir-lake);
+}

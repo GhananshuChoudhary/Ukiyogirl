@@ -1,0 +1,6 @@
+{
+  "name": "Kashmir Book Tribute",
+  "description": "A heartfelt visual tribute site to Ukiyogirl and her debut book about travel experiences, nature, and self-discovery in Kashmir.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
