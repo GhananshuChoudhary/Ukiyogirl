@@ -4,6 +4,7 @@ import bookCoverImg from './assets/images/book_cover_1780045380435.png';
 import authorPortraitImg from './assets/images/author_portrait_1780045401192.png';
 import lakeMistyImg from './assets/images/kashmir_lake_1780045423673.png';
 import valleyGreenImg from './assets/images/kashmir_valley_1780045444779.png';
+import lidderRiverImg from './assets/images/lidder_river_pahalgam_1780083959555.png';
 
 // Import our generated assets directly so Vite compiles and serves them on all devices
 export const IMAGES = {
@@ -12,6 +13,7 @@ export const IMAGES = {
   authorPortrait: authorPortraitImg,
   lakeMisty: lakeMistyImg,
   valleyGreen: valleyGreenImg,
+  lidderRiver: lidderRiverImg,
 };
 
 export const AUTHOR_INFO = {
@@ -119,13 +121,13 @@ export const DESTINATIONS: Destination[] = [
   },
   {
     id: 'dest-pahalgam',
-    name: 'Lidder River & Shepherds’ Trails',
-    nameMr: 'लिडर नदी आणि मेंढपाळांच्या वाटा',
-    description: 'The roaring, icy-blue glacial waters pathing through deep valleys where Nomadic shepherds guide their herds, reminding us of timeless human endurance.',
-    descriptionMr: 'खळाळणारे, निळेशार थंड पाणी खोऱ्यांमधून वाहते, जिथे भटक्या मेंढपाळांचे तांडे आपल्या कळपांसह फिरत असतात आणि मानवी संघर्षाची आठवण करून देतात.',
-    tag: 'Vibrant Valleys',
-    tagMr: 'जिवंत खोरे',
-    image: 'https://images.unsplash.com/photo-1566837945700-30057527ade0?auto=format&fit=crop&q=80&w=800',
+    name: 'Lidder River',
+    nameMr: 'लिडर नदी',
+    description: 'The glorious, icy-blue glacial waters of the Lidder River rushing through Pahalgam, flowing gracefully amidst dense pine forests.',
+    descriptionMr: 'पहलगामच्या सुंदर खोऱ्यांमधून खळाळत वाहणारे, निळेशार थंडगार लिडर नदीचे पाणी, जे आजूबाजूच्या घनदाट देवदार वनांची शोभा वाढवते.',
+    tag: 'Glacial Waters',
+    tagMr: 'थंडगार प्रवाह',
+    image: IMAGES.lidderRiver,
     season: 'Summer Glow',
     seasonMr: 'उन्हाळ्याचा काळ',
     climate: 'Cool and rushing',
