@@ -1,12 +1,17 @@
 import { Destination, Quote, TimelineEvent, ExperienceLesson, GalleryImage, ReaderBenefit } from './types';
+import heroBgImg from './assets/images/kashmir_hero_1780045359772.png';
+import bookCoverImg from './assets/images/book_cover_1780045380435.png';
+import authorPortraitImg from './assets/images/author_portrait_1780045401192.png';
+import lakeMistyImg from './assets/images/kashmir_lake_1780045423673.png';
+import valleyGreenImg from './assets/images/kashmir_valley_1780045444779.png';
 
-// Let's reference our generated images precisely using their exact output paths or direct imports
+// Import our generated assets directly so Vite compiles and serves them on all devices
 export const IMAGES = {
-  heroBg: '/src/assets/images/kashmir_hero_1780045359772.png',
-  bookCover: '/src/assets/images/book_cover_1780045380435.png',
-  authorPortrait: 'https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&q=80&w=800',
-  lakeMisty: '/src/assets/images/kashmir_lake_1780045423673.png',
-  valleyGreen: '/src/assets/images/kashmir_valley_1780045444779.png',
+  heroBg: heroBgImg,
+  bookCover: bookCoverImg,
+  authorPortrait: authorPortraitImg,
+  lakeMisty: lakeMistyImg,
+  valleyGreen: valleyGreenImg,
 };
 
 export const AUTHOR_INFO = {
