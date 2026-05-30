@@ -1,5 +1,6 @@
 import { Destination, Quote, TimelineEvent, ExperienceLesson, GalleryImage, ReaderBenefit } from './types';
 import heroBgImg from './assets/images/kashmir_hero_1780045359772.png';
+import bookBackCoverImg from './assets/images/kashmir_hero_back_cover_1780116849448.png';
 import bookCoverImg from './assets/images/book_cover_1780045380435.png';
 import authorPortraitImg from './assets/images/author_portrait_1780045401192.png';
 import lakeMistyImg from './assets/images/kashmir_lake_1780045423673.png';
@@ -10,6 +11,7 @@ import chinarAutumnLakeImg from './assets/images/chinar_autumn_lake_178008481989
 // Import our generated assets directly so Vite compiles and serves them on all devices
 export const IMAGES = {
   heroBg: heroBgImg,
+  bookBackCover: bookBackCoverImg,
   bookCover: bookCoverImg,
   authorPortrait: authorPortraitImg,
   lakeMisty: lakeMistyImg,

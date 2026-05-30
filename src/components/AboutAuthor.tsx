@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { Award, Compass, Heart, BookOpen } from 'lucide-react';
-import { AUTHOR_INFO } from '../data';
+import { AUTHOR_INFO, IMAGES } from '../data';
 import { useLanguage } from '../LanguageContext';
 
 export default function AboutAuthor() {
@@ -37,32 +37,17 @@ export default function AboutAuthor() {
               {/* Backing structural color card */}
               <div className="absolute inset-0 bg-kashmir-deep rounded-2xl transform rotate-3 scale-[1.01] opacity-90 transition-transform duration-500 group-hover:rotate-1" />
               
-              {/* Elegant floating placeholder container representing author's spirit without photographic image */}
-              <div className="relative z-10 aspect-[3/4] rounded-2xl overflow-hidden shadow-xl border border-white/5 bg-gradient-to-b from-kashmir-deep to-kashmir-lake transition-transform duration-500 group-hover:-translate-y-2 group-hover:translate-x-1 flex flex-col justify-between p-8 text-left">
+              {/* Image presentation container showcasing real back cover artwork */}
+              <div className="relative z-10 aspect-[3/4] rounded-2xl overflow-hidden shadow-xl border border-white/5 bg-kashmir-deep transition-transform duration-500 group-hover:-translate-y-2 group-hover:translate-x-1">
+                <img
+                  src={IMAGES.bookBackCover}
+                  alt={t("Book Back Cover Art", "पुस्तकाचे पाठीमागील कव्हर")}
+                  className="w-full h-full object-cover"
+                  referrerPolicy="no-referrer"
+                />
                 
-                {/* Artistic background glow */}
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.08),transparent_70%)] pointer-events-none" />
-                <div className="absolute bottom-0 inset-x-0 h-1/2 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
-
-                <div className="space-y-2 relative z-10">
-                  <div className="w-8 h-px bg-golden-accent" />
-                  <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-golden-accent">
-                    {t("The Spirit of Ukiyo", "उकियो दर्शन आणि भावना")}
-                  </span>
-                </div>
-
-                <div className="space-y-4 relative z-10">
-                  <Heart className="h-10 w-10 text-golden-accent/80 stroke-[1.2] animate-pulse" />
-                  <div>
-                    <h4 className="font-serif text-2xl font-light text-beige-light leading-snug">
-                      {t("ukiyo girl", "उकियो गर्ल")}
-                    </h4>
-                    <p className="font-sans text-[11px] text-kashmir-mist tracking-wide uppercase mt-1">
-                      काश्मीर स्पर्शाची गोष्ट
-                    </p>
-                  </div>
-                </div>
-
+                {/* Artistic background overlay gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-kashmir-deep/50 via-transparent to-transparent pointer-events-none" />
               </div>
 
               {/* Little Floating Badge */}
