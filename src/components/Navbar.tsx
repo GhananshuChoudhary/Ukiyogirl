@@ -45,7 +45,11 @@ export default function Navbar({ authorName, authorNameMr }: NavbarProps) {
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <a href="#" className="flex items-center gap-2 group">
             <Sparkles className="h-5 w-5 text-golden-accent animate-pulse" />
-            <span className="font-serif text-lg md:text-xl font-semibold tracking-wider text-kashmir-deep transition-colors group-hover:text-kashmir-lake">
+            <span className={`font-serif text-lg md:text-xl font-semibold tracking-wider transition-colors ${
+              scrolled 
+                ? 'text-kashmir-deep group-hover:text-kashmir-lake' 
+                : 'text-beige-light group-hover:text-white'
+            }`}>
               {t(authorName, authorNameMr)}
             </span>
           </a>
@@ -56,7 +60,11 @@ export default function Navbar({ authorName, authorNameMr }: NavbarProps) {
               <a
                 key={item.label}
                 href={item.href}
-                className="font-sans text-xs uppercase tracking-widest text-kashmir-deep/80 hover:text-kashmir-lake transition-colors py-1 relative group"
+                className={`font-sans text-xs uppercase tracking-widest transition-colors py-1 relative group ${
+                  scrolled 
+                    ? 'text-kashmir-deep/80 hover:text-kashmir-lake' 
+                    : 'text-beige-light/85 hover:text-white'
+                }`}
               >
                 {item.label}
                 <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-golden-accent transition-all duration-300 group-hover:w-full" />
@@ -66,7 +74,11 @@ export default function Navbar({ authorName, authorNameMr }: NavbarProps) {
             {/* Premium Language Switcher */}
             <button
               onClick={() => setLanguage(language === 'en' ? 'mr' : 'en')}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-kashmir-deep/10 hover:border-kashmir-deep/20 bg-white/30 hover:bg-white/60 text-kashmir-deep text-xs font-mono tracking-wider transition-all duration-300 cursor-pointer shadow-sm select-none"
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full border transition-all duration-300 cursor-pointer shadow-sm select-none text-xs font-mono tracking-wider ${
+                scrolled
+                  ? 'border-kashmir-deep/10 hover:border-kashmir-deep/20 bg-white/30 hover:bg-white/60 text-kashmir-deep'
+                  : 'border-white/20 hover:border-white/40 bg-white/5 hover:bg-white/10 text-beige-light'
+              }`}
               title={t('Switch to Marathi', 'इंग्रजीमध्ये बदलावे')}
             >
               <Languages className="h-3.5 w-3.5 text-golden-accent" />
@@ -75,7 +87,11 @@ export default function Navbar({ authorName, authorNameMr }: NavbarProps) {
 
             <a
               href="#about-book"
-              className="px-4 py-2 rounded-lg bg-kashmir-deep text-beige-light hover:bg-kashmir-lake font-sans text-xs uppercase tracking-widest transition-all duration-300 flex items-center gap-2 hover:shadow-sm"
+              className={`px-4 py-2 rounded-lg font-sans text-xs uppercase tracking-widest transition-all duration-300 flex items-center gap-2 hover:shadow-sm ${
+                scrolled
+                  ? 'bg-kashmir-deep text-beige-light hover:bg-kashmir-lake'
+                  : 'bg-golden-accent text-kashmir-deep hover:bg-beige-warm'
+              }`}
             >
               <BookOpen className="h-3.5 w-3.5" />
               {t('Explore Book', 'पुस्तक उघडा')}
@@ -87,7 +103,11 @@ export default function Navbar({ authorName, authorNameMr }: NavbarProps) {
             {/* Mobile Language Switcher */}
             <button
               onClick={() => setLanguage(language === 'en' ? 'mr' : 'en')}
-              className="flex items-center gap-1 px-2.5 py-1.5 rounded-full border border-kashmir-deep/10 bg-white/40 text-kashmir-deep text-xs font-mono transition-all"
+              className={`flex items-center gap-1 px-2.5 py-1.5 rounded-full border transition-all text-xs font-mono ${
+                scrolled
+                  ? 'border-kashmir-deep/10 bg-white/40 text-kashmir-deep'
+                  : 'border-white/20 bg-white/10 text-beige-light'
+              }`}
             >
               <Languages className="h-3 w-3 text-golden-accent" />
               <span className="font-semibold text-[10px]">{language === 'en' ? 'मराठी' : 'EN'}</span>
@@ -95,7 +115,9 @@ export default function Navbar({ authorName, authorNameMr }: NavbarProps) {
 
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 text-kashmir-deep focus:outline-none"
+              className={`p-2 focus:outline-none transition-colors ${
+                scrolled ? 'text-kashmir-deep' : 'text-beige-light hover:text-white'
+              }`}
               aria-label="Toggle Navigation Grid"
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
