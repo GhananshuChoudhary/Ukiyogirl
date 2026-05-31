@@ -46,17 +46,18 @@ export default function QuoteCarousel() {
           <div className="w-12 h-[1px] bg-golden-accent/45 my-2" />
         </div>
 
-        {/* Carousel Container using Stable Glassmorphism wrapper */}
+        {/* Carousel Container using Stable GPU-friendly card wrapper */}
         <div className="relative">
           
-          <div className="glass p-6 sm:p-10 md:p-14 rounded-3xl text-center flex flex-col justify-center items-center shadow-2xl border border-white/10 w-full min-h-[360px] sm:min-h-[290px] md:min-h-[320px]">
+          <div className="bg-kashmir-deep/95 border border-white/10 sm:bg-kashmir-blue/40 sm:backdrop-blur-md p-6 sm:p-10 md:p-14 rounded-3xl text-center flex flex-col justify-center items-center shadow-2xl w-full min-h-[420px] sm:min-h-[290px] md:min-h-[320px] overflow-hidden">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeQuote.id}
-                initial={{ opacity: 0, y: 8 }}
+                initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: 0.35, ease: 'easeOut' }}
+                exit={{ opacity: 0, y: -12 }}
+                transition={{ duration: 0.28, ease: 'easeInOut' }}
+                style={{ willChange: 'transform, opacity' }}
                 className="w-full text-center flex flex-col items-center gap-6"
               >
                 
