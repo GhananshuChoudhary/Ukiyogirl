@@ -16,11 +16,11 @@ export default function QuoteCarousel() {
     setCurrentIndex((prev) => (prev - 1 + QUOTES.length) % QUOTES.length);
   };
 
-  // Autoplay loop every 9 seconds for peaceful breathing rhythm
+  // Autoplay loop with automatic reset on manual slide change
   useEffect(() => {
     const interval = setInterval(nextQuote, 9000);
     return () => clearInterval(interval);
-  }, []);
+  }, [currentIndex]);
 
   const activeQuote = QUOTES[currentIndex];
 
@@ -46,61 +46,63 @@ export default function QuoteCarousel() {
           <div className="w-12 h-[1px] bg-golden-accent/45 my-2" />
         </div>
 
-        {/* Carousel Container using Glassmorphism */}
+        {/* Carousel Container using Stable Glassmorphism wrapper */}
         <div className="relative">
           
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeQuote.id}
-              initial={{ opacity: 0, scale: 0.98 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 1.02 }}
-              transition={{ duration: 0.6, ease: 'easeInOut' }}
-              className="glass p-8 md:p-14 rounded-3xl text-center flex flex-col items-center gap-8 shadow-2xl border border-white/10"
-            >
-              
-              {/* Giant quote mark decoration */}
-              <QuoteIcon className="h-10 w-10 text-golden-accent/40 animate-pulse" />
+          <div className="glass p-6 sm:p-10 md:p-14 rounded-3xl text-center flex flex-col justify-center items-center shadow-2xl border border-white/10 w-full min-h-[360px] sm:min-h-[290px] md:min-h-[320px]">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeQuote.id}
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.35, ease: 'easeOut' }}
+                className="w-full text-center flex flex-col items-center gap-6"
+              >
+                
+                {/* Giant quote mark decoration */}
+                <QuoteIcon className="h-8 w-8 text-golden-accent/40" />
 
-              {/* original Marathi excerpt */}
-              {activeQuote.bookText && (
-                <div className="space-y-2">
-                  <span className="font-mono text-[9px] uppercase tracking-widest text-golden-accent/75">
-                    {t("Original Excerpt (मराठी)", "मूळ उतारा (मराठी)")}
+                {/* original Marathi excerpt */}
+                {activeQuote.bookText && (
+                  <div className="space-y-1.5">
+                    <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-golden-accent/75 block">
+                      {t("Original Excerpt (मराठी)", "मूळ उतारा (मराठी)")}
+                    </span>
+                    <p className="font-serif italic text-lg sm:text-xl md:text-2xl font-semibold leading-relaxed text-yellow-50/90 text-center select-none block max-w-2xl">
+                      "{activeQuote.bookText}"
+                    </p>
+                  </div>
+                )}
+
+                {/* Divider in glass */}
+                <div className="w-16 h-[1px] bg-white/10" />
+
+                {/* Beautiful English interpretation */}
+                <div className="space-y-1.5">
+                  <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-golden-accent/75 block">
+                    {t("Reflective English Translation", "विचारशील इंग्रजी अनुवाद")}
                   </span>
-                  <p className="font-serif italic text-xl md:text-2xl font-semibold leading-relaxed text-yellow-50/90 text-center select-none block max-w-2xl">
-                    "{activeQuote.bookText}"
+                  <p className="font-serif italic text-sm sm:text-base md:text-lg text-kashmir-mist leading-relaxed font-light max-w-2xl">
+                    "{activeQuote.text}"
                   </p>
                 </div>
-              )}
 
-              {/* Divider in glass */}
-              <div className="w-24 h-[1px] bg-white/10" />
+                {/* Footnote metadata */}
+                <div className="flex items-center gap-2 bg-white/5 px-4 py-1.5 rounded-full border border-white/5 mt-1">
+                  <BookOpen className="h-3.5 w-3.5 text-golden-accent" />
+                  <span className="font-mono text-[10px] uppercase tracking-widest text-kashmir-mist font-semibold">
+                    {t(activeQuote.chapter, activeQuote.chapterMr)}
+                  </span>
+                  <span className="text-white/20">•</span>
+                  <span className="font-sans text-[10px] text-golden-accent">
+                    {t(activeQuote.page || "", activeQuote.pageMr || "")}
+                  </span>
+                </div>
 
-              {/* Beautiful English interpretation */}
-              <div className="space-y-1">
-                <span className="font-mono text-[9px] uppercase tracking-widest text-golden-accent/75">
-                  {t("Reflective English Translation", "विचारशील इंग्रजी अनुवाद")}
-                </span>
-                <p className="font-serif italic text-base md:text-lg text-kashmir-mist leading-relaxed font-light max-w-2xl">
-                  "{activeQuote.text}"
-                </p>
-              </div>
-
-              {/* Footnote metadata */}
-              <div className="flex items-center gap-2 bg-white/5 px-4 py-1.5 rounded-full border border-white/5 mt-2">
-                <BookOpen className="h-3.5 w-3.5 text-golden-accent" />
-                <span className="font-mono text-[10px] uppercase tracking-widest text-kashmir-mist font-semibold">
-                  {t(activeQuote.chapter, activeQuote.chapterMr)}
-                </span>
-                <span className="text-white/20">•</span>
-                <span className="font-sans text-[10px] text-golden-accent">
-                  {t(activeQuote.page || "", activeQuote.pageMr || "")}
-                </span>
-              </div>
-
-            </motion.div>
-          </AnimatePresence>
+              </motion.div>
+            </AnimatePresence>
+          </div>
 
           {/* Manual Left/Right Nav Buttons */}
           <div className="flex items-center justify-between mt-8 max-w-xs mx-auto">
