@@ -72,9 +72,10 @@ export default function Tribute() {
               </span>
             </div>
             
-            <span className="font-sans text-[10px] text-kashmir-mist font-light">
-              {t("By her proud friend • 2026", "एका जीवलग मित्राकडून सस्नेह • २०२६")}
-            </span>
+            <div className="text-center md:text-right flex flex-col md:items-end gap-1 font-sans text-[10px] text-kashmir-mist font-light">
+              <span>{t("By her proud friend • 2026", "एका जीवलग मित्राकडून सस्नेह • २०२६")}</span>
+              <span className="text-golden-accent font-semibold tracking-wider font-mono">{t("Published: 7 June 2026", "प्रकाशन: ७ जून २०२६")}</span>
+            </div>
           </div>
 
         </motion.div>

@@ -142,7 +142,7 @@ export default function Hero() {
             >
               <img
                 src={IMAGES.bookCover}
-                alt={t("Book Cover: Yoo 'Haseen' Waadiyan", "पुस्तकाचे मुखपृष्ठ: यू 'हसीन' वादिया")}
+                alt={t("Book Cover: Yoo 'Haseen' Waadiyan", "पुस्तकाचे मुखपृष्ठ: यूँ 'हसीं' वादियाँ")}
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
               />

@@ -25,78 +25,76 @@ export default function QuoteCarousel() {
   const activeQuote = QUOTES[currentIndex];
 
   return (
-    <section id="quotes" className="py-24 px-6 bg-kashmir-deep relative overflow-hidden text-beige-light">
+    <section id="quotes" className="py-20 px-4 sm:px-6 bg-[#0E1A2F] relative text-beige-light">
       
-      {/* Absolute serene dark aesthetic backdrop */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-kashmir-lake/20 rounded-full filter blur-[150px] opacity-80 pointer-events-none" />
-      </div>
+      {/* Absolute serene dark aesthetic backdrop - lightweight, flat dark color to prevent rendering glitches */}
+      <div className="absolute inset-0 z-0 bg-[#0E1A2F] pointer-events-none" />
 
       <div className="max-w-4xl mx-auto relative z-10">
 
         {/* Header markers */}
-        <div className="text-center max-w-2xl mx-auto mb-12 flex flex-col items-center gap-3">
+        <div className="text-center max-w-2xl mx-auto mb-10 flex flex-col items-center gap-3">
           <span className="font-mono text-xs uppercase tracking-widest text-golden-accent flex items-center gap-2">
-            <QuoteIcon className="h-4.5 w-4.5 text-golden-accent" />
+            <QuoteIcon className="h-4 w-4 text-golden-accent" />
             {t("Book Quotes & Excerpts", "पुस्तकातील निवडक उतारे आणि विचार")}
           </span>
-          <h2 className="font-serif text-3xl md:text-5xl font-light">
+          <h2 className="font-serif text-2xl md:text-5xl font-light">
             {t("Memories in Lettering", "शब्दांत कोरलेल्या देखण्या आठवणी")}
           </h2>
           <div className="w-12 h-[1px] bg-golden-accent/45 my-2" />
         </div>
 
-        {/* Carousel Container using Stable GPU-friendly card wrapper */}
+        {/* Carousel Container - Solid, flat, fixed height container to stop dynamic reflows and browser screen corruptions */}
         <div className="relative">
           
-          <div className="bg-kashmir-deep/95 border border-white/10 sm:bg-kashmir-blue/40 sm:backdrop-blur-md p-6 sm:p-10 md:p-14 rounded-3xl text-center flex flex-col justify-center items-center shadow-2xl w-full min-h-[420px] sm:min-h-[290px] md:min-h-[320px] overflow-hidden">
+          <div className="bg-[#142642] border border-white/10 p-4 sm:p-10 md:p-14 rounded-3xl text-center flex flex-col justify-center items-center shadow-lg w-full h-[380px] xs:h-[350px] sm:h-[330px] md:h-[350px] overflow-hidden">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeQuote.id}
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -12 }}
-                transition={{ duration: 0.28, ease: 'easeInOut' }}
-                style={{ willChange: 'transform, opacity' }}
-                className="w-full text-center flex flex-col items-center gap-6"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2, ease: 'easeInOut' }}
+                style={{ backfaceVisibility: 'hidden', transform: 'translate3d(0,0,0)' }}
+                className="w-full text-center flex flex-col items-center gap-3 sm:gap-5"
               >
                 
                 {/* Giant quote mark decoration */}
-                <QuoteIcon className="h-8 w-8 text-golden-accent/40" />
+                <QuoteIcon className="h-6 w-6 sm:h-8 sm:w-8 text-golden-accent/30" />
 
                 {/* original Marathi excerpt */}
                 {activeQuote.bookText && (
-                  <div className="space-y-1.5">
-                    <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-golden-accent/75 block">
+                  <div className="space-y-1">
+                    <span className="font-mono text-[8px] sm:text-[9px] uppercase tracking-[0.2em] text-golden-accent/70 block">
                       {t("Original Excerpt (मराठी)", "मूळ उतारा (मराठी)")}
                     </span>
-                    <p className="font-serif italic text-lg sm:text-xl md:text-2xl font-semibold leading-relaxed text-yellow-50/90 text-center select-none block max-w-2xl">
+                    <p className="font-serif italic text-sm sm:text-lg md:text-xl font-medium leading-relaxed text-yellow-50/90 text-center select-none block max-w-2xl px-2">
                       "{activeQuote.bookText}"
                     </p>
                   </div>
                 )}
 
-                {/* Divider in glass */}
-                <div className="w-16 h-[1px] bg-white/10" />
+                {/* Divider */}
+                <div className="w-12 h-[1px] bg-white/10" />
 
                 {/* Beautiful English interpretation */}
-                <div className="space-y-1.5">
-                  <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-golden-accent/75 block">
+                <div className="space-y-1">
+                  <span className="font-mono text-[8px] sm:text-[9px] uppercase tracking-[0.2em] text-golden-accent/70 block">
                     {t("Reflective English Translation", "विचारशील इंग्रजी अनुवाद")}
                   </span>
-                  <p className="font-serif italic text-sm sm:text-base md:text-lg text-kashmir-mist leading-relaxed font-light max-w-2xl">
+                  <p className="font-serif italic text-xs sm:text-sm md:text-base text-kashmir-mist leading-relaxed font-light max-w-2xl px-2">
                     "{activeQuote.text}"
                   </p>
                 </div>
 
                 {/* Footnote metadata */}
-                <div className="flex items-center gap-2 bg-white/5 px-4 py-1.5 rounded-full border border-white/5 mt-1">
-                  <BookOpen className="h-3.5 w-3.5 text-golden-accent" />
-                  <span className="font-mono text-[10px] uppercase tracking-widest text-kashmir-mist font-semibold">
+                <div className="flex items-center gap-2 bg-white/5 px-3 py-1 rounded-full border border-white/5 mt-1">
+                  <BookOpen className="h-3 w-3 text-golden-accent" />
+                  <span className="font-mono text-[9px] uppercase tracking-widest text-kashmir-mist font-semibold">
                     {t(activeQuote.chapter, activeQuote.chapterMr)}
                   </span>
                   <span className="text-white/20">•</span>
-                  <span className="font-sans text-[10px] text-golden-accent">
+                  <span className="font-sans text-[9px] text-golden-accent">
                     {t(activeQuote.page || "", activeQuote.pageMr || "")}
                   </span>
                 </div>

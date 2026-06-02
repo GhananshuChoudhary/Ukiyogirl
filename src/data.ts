@@ -32,7 +32,7 @@ export const AUTHOR_INFO = {
   motivation: 'Driven by the philosophy that to truly see and experience nature, one must embrace fearlessness ("निर्भय"), Pavani wanted to record a Kashmir not found through standard search engine algorithms. Her book is a heartfelt inquiry into how local hospitality, cold mist, and vast expanses heal and foster quiet internal growth in youth.',
   motivationMr: 'निसर्गाचा खरा अनुभव घ्यायचा असेल तर आधी "निर्भय" व्हावे लागते, या विचाराने प्रेरित होऊन पावनीने सामान्य सर्च इंजिनच्या अल्गोरिदममध्ये न सापडणारे काश्मीर टिपायचे ठरवले. तिचे पुस्तक म्हणजे स्थानिक आदरातिथ्य, थंड धुकं आणि अथांग डोंगररांगा कशा प्रकारे आपल्या जखमा बऱ्या करतात आणि शांत अंतर्गत वाढीला हातभार लावतात, याचा शोध आहे.',
   bookTitle: "Yoo 'Haseen' Waadiyan",
-  bookTitleMr: "यू 'हसीन' वादिया",
+  bookTitleMr: "यूँ 'हसीं' वादियाँ",
   bookSubtitle: "Glimpses of Kashmir (काश्मीर स्पर्शाची गोष्ट)",
   bookSubtitleMr: "काश्मीर स्पर्शाची गोष्ट (Glimpses of Kashmir)",
   publisher: 'Swayam Prakashan (स्वय प्रकाशन)',
@@ -266,7 +266,7 @@ export const GALLERY: GalleryImage[] = [
     id: 'gal-5',
     src: IMAGES.bookCover,
     caption: 'A physical copy of "Yoo Haseen Waadiyan" — a dream materialized over sleepless cold nights.',
-    captionMr: '"यू हसीन वादिया" पुस्तकाची छापील प्रत — थंड आणि जागून काढलेल्या रात्रींचे साकारलेले एक स्वप्न.',
+    captionMr: '"यूँ हसीं वादियाँ" पुस्तकाची छापील प्रत — थंड आणि जागून काढलेल्या रात्रींचे साकारलेले एक स्वप्न.',
     category: 'The Book',
     categoryMr: 'पुस्तक स्वरूप',
     aspect: 'portrait'

@@ -44,6 +44,10 @@ export default function Footer() {
               <span>{t(AUTHOR_INFO.publisher, AUTHOR_INFO.publisherMr)}</span>
             </li>
             <li className="flex items-start gap-2">
+              <span className="font-semibold text-white">{t("Published on:", "प्रकाशन:")}</span> 
+              <span>{t("7 June 2026 (Sunday)", "७ जून २०२६ (रविवार)")}</span>
+            </li>
+            <li className="flex items-start gap-2">
               <span className="font-semibold text-white">{t("Format:", "स्वरूप:")}</span> 
               <span>{t("Perfect paperbound volume", "देखणी पेपरबॅक आवृत्ती")}</span>
             </li>
