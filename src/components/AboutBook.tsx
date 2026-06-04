@@ -27,15 +27,8 @@ export default function AboutBook() {
           <div className="w-12 h-[2px] bg-golden-accent/60 my-2" />
           <p className="font-sans text-sm text-kashmir-deep/70 font-light leading-relaxed">
             {t(
-              "Written from a sincere, youthful perspective, ",
-              "एका संवेदनशील, तरुण दृष्टिकोनातून लिहिलेले, "
-            )}
-            <span className="italic font-serif text-kashmir-deep font-medium">
-              "{t(AUTHOR_INFO.bookTitle, AUTHOR_INFO.bookTitleMr)}"
-            </span>{" "}
-            {t(
-              " is a heartfelt chronicle that blends travelogue logs with quiet individual introspection.",
-              " हे एक हृदयस्पर्शी लिखाण आहे जे प्रवासवर्णनाच्या नोंदी आणि शांत वैयक्तिक आत्मपरीक्षण यांचे उत्कृष्ट मिश्रण करते."
+              "Written during her early years, this book brings together travel memories, personal reflections, and the small moments that often go unnoticed.",
+              "पावनीने तिच्या कोवळ्या वयात लिहिलेले हे पुस्तक प्रवासातील नितांत सुंदर आठवणी, वैयक्तिक विचार आणि आपल्याकडून अनेकदा राहून जाणाऱ्या छोट्या पण महत्त्वाच्या क्षणांना एकत्र आणते."
             )}
           </p>
         </div>
@@ -47,8 +40,8 @@ export default function AboutBook() {
           <div className="lg:col-span-6 space-y-6 text-left">
             <h3 className="font-serif text-2xl md:text-3xl font-light text-kashmir-deep/90 leading-tight">
               {t(
-                "An Authentic Look at Kashmir, Born out of Fearless Observations.",
-                "निर्भय निरीक्षणांतून जन्मलेले काश्मीरचे एक अस्सल दर्शन."
+                "Kashmir Through Curious Eyes",
+                "कुतूहल आणि जिज्ञासू नजरेतून काश्मीर"
               )}
             </h3>
             

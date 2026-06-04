@@ -22,8 +22,8 @@ export default function Footer() {
           
           <p className="font-sans text-xs text-kashmir-mist/80 max-w-sm font-light leading-relaxed">
             {t(
-              `A heartfelt visual tribute site crafted with pride by a friend to celebrate ${AUTHOR_INFO.name}'s debut travel memoir.`,
-              `लेखिका ${t(AUTHOR_INFO.name, AUTHOR_INFO.nameMr)} यांच्या पहिल्या काश्मीर प्रवासवर्णनानिमित्त एका मित्राने सस्नेह तयार केलेली ही एक अनोखी डिजिटल भेट.`
+              "Made for Pavani, in celebration of her first published work.",
+              "पावनीच्या पहिल्या प्रकाशित पुस्तकाच्या आनंदात, तिच्या एका जीवलग मित्राने बनवलेली ही भेट."
             )}
           </p>
 

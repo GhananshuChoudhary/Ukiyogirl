@@ -36,30 +36,36 @@ export default function Tribute() {
 
           <div className="space-y-3">
             <span className="font-mono text-[9px] uppercase tracking-widest text-golden-accent font-semibold block">
-              {t("A Friend’s Heartfelt Honoring", "एका चांगल्या मित्राकडून सस्नेह दाद")}
+              {t("A Friend's Message", "जीवलग मित्राचे दोन शब्द")}
             </span>
-            <h2 className="font-serif text-3xl md:text-5xl font-light leading-tight">
-              {t("A Tribute to Courage", "जिद्द आणि कल्पकतेला सलाम")}
+            <h2 className="font-serif text-3xl md:text-5xl font-light leading-tight animate-fade-in">
+              {t("Made for Pavani", "पावनीसाठी एक छोटीशी भेट")}
             </h2>
             <div className="w-16 h-[1px] bg-golden-accent/40 mx-auto my-3" />
           </div>
 
           <blockquote className="font-serif italic text-base md:text-lg text-yellow-55/90 leading-relaxed max-w-2xl mx-auto">
             {t(
-              "\"This website was created as a tribute to celebrate the dedication, courage, and creativity behind turning raw travel experiences, cold nights, and warm encounters into a published book.\"",
-              "“हे संकेतस्थळ काश्मीरमधील प्रवासातील गोठवणाऱ्या रात्री, तिथल्या माणसांचे जिव्हाळ्याचे प्रसंग आणि अद्भुत अनुभव एका देखण्या पुस्तकाच्या रूपाने जगासमोर आणणाऱ्या तिच्या समर्पणवृत्तीला, जिद्दीला आणि कल्पकतेला दिलेला सस्नेह प्रतिसाद आहे.”"
+              "\"This website exists because I wanted to celebrate someone who had the courage to turn her experiences into words.\"",
+              "“हे संकेतस्थळ तयार करण्यामागचं कारण म्हणजे, ज्या व्यक्तीने स्वतःचे अनुभव शब्दांत मांडण्याचं धाडस केलं, तिचा हा प्रवास मला साजरा करायचा होता.”"
             )}
           </blockquote>
 
-          <div className="pt-4 space-y-4 max-w-lg mx-auto text-center md:text-left">
-            <p className="font-sans text-xs text-kashmir-mist/80 leading-relaxed font-light text-center">
+          <div className="pt-4 space-y-4 max-w-xl mx-auto text-center">
+            <p className="font-sans text-xs md:text-sm text-kashmir-mist/80 leading-relaxed font-light text-center">
               {t(
-                "At an age when most are looking for instructions, Pavani (Ukiyogirl) decided to author her own coordinates. She took her vulnerability, her pensiveness, her Marathi roots, her dreamlike explorations of Himalayan lakes, and bound them forever in ink.",
-                "ज्या वयात बहुतांश लोक मार्गदर्शनाच्या शोधात असतात, तिथे पावनीने (Ukiyogirl) स्वतःच्या कर्तृत्वाने एक आगळी वाट निवडली. तिने तिचे भावविश्व, चिंतनशीलता, मराठी मातीचे संस्कार आणि हिमालयातील गोठलेल्या सरोवरांचा नयनरम्य प्रवास शब्दांच्या अद्भुत रंगांत कायमचा बांधून ठेवला."
+                "Long before there was a published book, there were notebooks, observations, questions, and countless moments that deserved to be remembered. Watching those memories become a real book has been inspiring.",
+                "एक छापील पुस्तक प्रत्यक्षात येण्यापूर्वी अनेक डायऱ्या, निरीक्षणं, प्रश्न आणि जपून ठेवावे असे असंख्य अनमोल क्षण होते, जे कायम लक्षात राहावेत. त्या आठवणी एका खऱ्या पुस्तकाच्या रूपाने आकाराला येताना पाहणं अतिशय प्रेरणादायी आहे."
               )}
             </p>
-            <p className="font-sans text-xs text-golden-accent/90 font-mono text-center uppercase tracking-widest font-semibold">
-              {t("Proud of your first publication, Pavani!", "तुझ्या या पहिल्या देखण्या पुस्तकाबद्दल आम्हा सर्वांना सार्थ अभिमान आहे, पावनी!")}
+            <p className="font-sans text-xs md:text-sm text-kashmir-mist/80 leading-relaxed font-light text-center">
+              {t(
+                "This is my small way of appreciating the effort, curiosity, and sincerity behind \"Yoo Haseen Waadiyan.\"",
+                "\"यूँ हसीं वादियाँ\" च्या निर्मितीमागे असलेले प्रयत्न, तिचे कुतूहल आणि तिचा सच्चेपणा यांचे कौतुक करण्याचा हा माझा एक छोटासा प्रयत्न आहे."
+              )}
+            </p>
+            <p className="font-sans text-xs md:text-sm text-golden-accent/90 font-mono text-center uppercase tracking-widest font-semibold mt-4">
+              {t("Proud of you, Pavani.", "तुझा खूप खूप अभिमान वाटतो, पावनी!")}
             </p>
           </div>
 

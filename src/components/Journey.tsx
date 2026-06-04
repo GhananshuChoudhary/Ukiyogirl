@@ -33,10 +33,10 @@ export default function Journey() {
         </div>
 
         {/* Dynamic Interactive Split Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div className="grid grid-cols-1 xl:grid-cols-12 gap-12 items-start">
           
-          {/* Left Side: Destination Selectable Cards List (4 cols) */}
-          <div className="lg:col-span-12 xl:col-span-5 space-y-4">
+          {/* Left Side: Destination Selectable Cards List */}
+          <div className="w-full xl:col-span-5 space-y-4">
             <span className="font-mono text-[9px] uppercase tracking-widest text-kashmir-deep/50 block text-left mb-2 pl-1">
               {t("Select a location to explore logs:", "अनुभव पाहण्यासाठी ठिकाण निवडा:")}
             </span>
@@ -45,48 +45,117 @@ export default function Journey() {
               {DESTINATIONS.map((dest) => {
                 const isSelected = selectedDest.id === dest.id;
                 return (
-                  <motion.button
+                  <div
                     key={dest.id}
-                    onClick={() => setSelectedDest(dest)}
-                    className={`w-full text-left p-5 rounded-2xl border transition-all duration-300 flex items-start gap-4 ${
+                    className={`w-full rounded-2xl border transition-all duration-300 overflow-hidden ${
                       isSelected
                         ? 'bg-kashmir-deep border-kashmir-deep text-beige-light shadow-lg shadow-kashmir-deep/15'
                         : 'bg-white/60 border-kashmir-mist/30 hover:border-kashmir-lake/45 text-kashmir-deep'
                     }`}
                   >
-                    
-                    {/* Visual miniature circle */}
-                    <div className="w-12 h-12 rounded-xl overflow-hidden shrink-0 shadow-sm">
-                      <img
-                        src={dest.image}
-                        alt={t(dest.name, dest.nameMr)}
-                        className="w-full h-full object-cover"
-                        referrerPolicy="no-referrer"
-                      />
-                    </div>
-
-                    <div className="space-y-1">
-                      <div className="flex items-center gap-2">
-                        <span className={`font-mono text-[8px] uppercase tracking-wider px-1.5 py-0.5 rounded ${
-                          isSelected ? 'bg-white/10 text-golden-accent' : 'bg-kashmir-light text-kashmir-lake font-bold'
-                        }`}>
-                          {t(dest.tag, dest.tagMr)}
-                        </span>
+                    <button
+                      onClick={() => setSelectedDest(dest)}
+                      className="w-full text-left p-5 flex items-start gap-4 outline-none focus:outline-none"
+                    >
+                      {/* Visual miniature circle */}
+                      <div className="w-12 h-12 rounded-xl overflow-hidden shrink-0 shadow-sm">
+                        <img
+                          src={dest.image}
+                          alt={t(dest.name, dest.nameMr)}
+                          className="w-full h-full object-cover"
+                          referrerPolicy="no-referrer"
+                        />
                       </div>
-                      <h4 className="font-serif text-base font-semibold tracking-wide">
-                        {t(dest.name, dest.nameMr)}
-                      </h4>
-                    </div>
 
-                  </motion.button>
+                      <div className="space-y-1 flex-1">
+                        <div className="flex items-center gap-2">
+                          <span className={`font-mono text-[8px] uppercase tracking-wider px-1.5 py-0.5 rounded ${
+                            isSelected ? 'bg-white/10 text-golden-accent' : 'bg-kashmir-light text-kashmir-lake font-bold'
+                          }`}>
+                            {t(dest.tag, dest.tagMr)}
+                          </span>
+                        </div>
+                        <h4 className="font-serif text-base font-semibold tracking-wide">
+                          {t(dest.name, dest.nameMr)}
+                        </h4>
+                      </div>
+                    </button>
+
+                    <AnimatePresence initial={false}>
+                      {isSelected && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3, ease: 'easeInOut' }}
+                          className="xl:hidden border-t border-white/10 px-5 pb-5 pt-4 space-y-4 text-left overflow-hidden bg-black/10"
+                        >
+                          {/* Banner Image */}
+                          <div className="h-44 w-full relative rounded-xl overflow-hidden select-none">
+                            <img
+                              src={dest.image}
+                              alt={t(dest.name, dest.nameMr)}
+                              className="w-full h-full object-cover"
+                              referrerPolicy="no-referrer"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/15" />
+                          </div>
+
+                          {/* Description */}
+                          <p className="font-sans text-xs sm:text-sm text-beige-light/95 font-light leading-relaxed">
+                            {t(dest.description, dest.descriptionMr)}
+                          </p>
+
+                          {/* Stats */}
+                          <div className="grid grid-cols-2 gap-3 pt-3 border-t border-white/10">
+                            <div className="flex items-start gap-1.5">
+                              <Calendar className="h-3.5 w-3.5 text-golden-accent mt-0.5 shrink-0" />
+                              <div>
+                                <span className="font-mono text-[8px] uppercase tracking-widest text-[#a8b8cc] block">
+                                  {t("Best Season", "उत्तम काळ")}
+                                </span>
+                                <p className="font-sans text-[10px] sm:text-xs font-semibold text-beige-light">
+                                  {t(dest.season, dest.seasonMr)}
+                                </p>
+                              </div>
+                            </div>
+
+                            <div className="flex items-start gap-1.5">
+                              <Sun className="h-3.5 w-3.5 text-golden-accent mt-0.5 shrink-0" />
+                              <div>
+                                <span className="font-mono text-[8px] uppercase tracking-widest text-[#a8b8cc] block">
+                                  {t("Atmospheric Climate", "हवामान")}
+                                </span>
+                                <p className="font-sans text-[10px] sm:text-xs font-semibold text-beige-light">
+                                  {t(dest.climate, dest.climateMr)}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Narrative Quote block */}
+                          <div className="p-3.5 rounded-lg bg-white/5 border border-white/5 flex gap-2.5 items-center">
+                            <BookOpen className="h-4 w-4 text-golden-accent shrink-0" />
+                            <span className="font-serif italic text-xs leading-relaxed text-[#b4c3d4]">
+                              {language === 'mr' ? (
+                                `"धुक्याची प्रत्येक नवीन लाट आपल्यासोबत शतकांचा इतिहास वाहून आणते. ${dest.nameMr} मध्ये असताना मी खऱ्या शांततेमध्ये कशा प्रकारे लिहावे हे शिकले."`
+                              ) : (
+                                `"Each wave of mist carries the voices of centuries. In ${dest.name}, I learned what it means to write from silence."`
+                              )}
+                            </span>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
                 );
               })}
             </div>
 
           </div>
 
-          {/* Right Side: Immersive Selected Details Showcase with high fidelity design (7 cols) */}
-          <div className="lg:col-span-12 xl:col-span-7 h-full">
+          {/* Right Side: Immersive Selected Details Showcase with high fidelity design (visible only on desktop >= xl) */}
+          <div className="hidden xl:block xl:col-span-7 h-full">
             <AnimatePresence mode="wait">
               <motion.div
                 key={selectedDest.id}

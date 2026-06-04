@@ -41,7 +41,7 @@ export default function Hero() {
             className="flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-[10px] uppercase tracking-widest text-golden-accent font-mono"
           >
             <Sparkles className="h-3.5 w-3.5" />
-            {t("A Friend’s Tribute to her Journey", "एका मित्राची शब्दभेट आणि आदरंजली")}
+            {t("Celebrating a friend's first book", "एका मैत्रिणीच्या पहिल्या पुस्तकाचे कौतुक")}
           </motion.div>
 
           <motion.div
