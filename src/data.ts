@@ -237,7 +237,7 @@ export const GALLERY: GalleryImage[] = [
   },
   {
     id: 'gal-2',
-    src: IMAGES.authorPortrait,
+    src: 'https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&q=80&w=800',
     caption: 'Her hand-written travel notebook reflecting transient floating life moments in Kashmir.',
     captionMr: 'काश्मीरमधील क्षणभंगुर आणि तरंगणाऱ्या सुंदर आठवणी टिपणारी तिची स्वतःच्या हस्ताक्षरातील डायरी.',
     category: 'The Author',
@@ -251,15 +251,6 @@ export const GALLERY: GalleryImage[] = [
     captionMr: 'सकाळच्या पांढऱ्याशुभ्र धुक्यात वेढलेली गुलमर्गची सुंदर देवदार झाडे आणि पर्वत.',
     category: 'Peaks & Valleys',
     categoryMr: 'शिखरे आणि खोरी',
-    aspect: 'landscape'
-  },
-  {
-    id: 'gal-4',
-    src: 'https://images.unsplash.com/photo-1621252179027-94459d278660?auto=format&fit=crop&q=80&w=800',
-    caption: 'Snowcapped peaks kissing the clear sky over the western pastures of Kashmir.',
-    captionMr: 'काश्मीरच्या पश्चिमेकडील कुरणांवरून निरभ्र आकाशाला स्पर्श करणारी बर्फाच्छादित शिखरे.',
-    category: 'Eternal Ice',
-    categoryMr: 'शाश्वत बर्फाच्छादन',
     aspect: 'landscape'
   },
   {

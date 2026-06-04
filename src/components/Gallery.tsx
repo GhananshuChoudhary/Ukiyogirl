@@ -13,7 +13,7 @@ export default function Gallery() {
   const filteredGallery = GALLERY.filter((img) => {
     if (selectedCategory === 'All') return true;
     if (selectedCategory === 'Landscapes') {
-      return img.category === 'Peaks & Valleys' || img.category === 'Water & Soul' || img.category === 'Seasons' || img.category === 'Eternal Ice';
+      return img.category === 'Peaks & Valleys' || img.category === 'Water & Soul' || img.category === 'Seasons';
     }
     if (selectedCategory === 'The Author') return img.category === 'The Author';
     if (selectedCategory === 'The Book') return img.category === 'The Book';
