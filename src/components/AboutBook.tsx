@@ -1,10 +1,12 @@
+import { useState } from 'react';
 import { motion } from 'motion/react';
 import { BookOpen, Compass, Heart, Leaf, Scroll } from 'lucide-react';
-import { AUTHOR_INFO, TIMELINE_EVENTS } from '../data';
+import { AUTHOR_INFO, TIMELINE_EVENTS, IMAGES } from '../data';
 import { useLanguage } from '../LanguageContext';
 
 export default function AboutBook() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const [coverTab, setCoverTab] = useState<'front' | 'back'>('front');
 
   return (
     <section id="about-book" className="py-24 px-6 bg-beige-light relative overflow-hidden">
@@ -96,40 +98,119 @@ export default function AboutBook() {
 
           </div>
 
-          {/* Right Visual Highlight - Glass Backed Literary Card */}
-          <div className="lg:col-span-6 flex justify-center">
-            <div className="p-8 md:p-10 rounded-3xl glass-light relative overflow-hidden text-left border border-kashmir-mist/25 max-w-lg w-full">
-              
-              {/* Decorative vintage paper texture background simulated */}
-              <div className="absolute inset-0 opacity-5 mix-blend-overlay bg-repeat bg-[radial-gradient(#2d4c6f_1px,transparent_1px)]" style={{ backgroundSize: '16px 16px' }} />
-              
-              <Scroll className="h-8 w-8 text-golden-accent/60 mb-6" />
-              <h4 className="font-serif text-xs uppercase tracking-widest text-golden-accent font-semibold mb-2">
-                {t("Back Cover Extract (English)", "बॅक कव्हर सारांश (मराठीत)")}
-              </h4>
-              
-              <blockquote className="font-serif italic text-base md:text-lg text-kashmir-deep/90 leading-relaxed mb-6">
-                {t(
-                  "“Every moment, lived with an urgent passion to exist fully in that precise transition, 'Ukiyogirl' at a young age wrote the story of 'Kashmir Sparshachi' (Touch of Kashmir) — a reality not searchable on Google...”",
-                  "“प्रत्येक क्षण, त्याच क्षणात पूर्णपणे जगण्याच्या ऊर्मीने उकियो गर्लने तरुण वयात काश्मीर स्पर्शाची गोष्ट लिहिली — हे एक असे वास्तव आहे जे गुगलवर कधीही शोधून सापडणार नाही...”"
-                )}
-              </blockquote>
+          {/* Right Visual Highlight - Interactive Book Cover Showcase */}
+          <div className="lg:col-span-6 flex flex-col items-center gap-6 w-full">
+            
+            {/* Tab Controls */}
+            <div className="flex gap-2 p-1 rounded-xl bg-kashmir-deep/5 border border-kashmir-mist/20 w-fit">
+              <button
+                onClick={() => setCoverTab('front')}
+                className={`px-4 py-2 rounded-lg font-sans text-xs uppercase tracking-wider font-semibold transition-all duration-300 ${
+                  coverTab === 'front'
+                    ? 'bg-kashmir-deep text-beige-light shadow-md'
+                    : 'text-kashmir-deep/70 hover:text-kashmir-deep'
+                }`}
+              >
+                {t("Front Cover", "मुखपृष्ठ")}
+              </button>
+              <button
+                onClick={() => setCoverTab('back')}
+                className={`px-4 py-2 rounded-lg font-sans text-xs uppercase tracking-wider font-semibold transition-all duration-300 ${
+                  coverTab === 'back'
+                    ? 'bg-kashmir-deep text-beige-light shadow-md'
+                    : 'text-kashmir-deep/70 hover:text-kashmir-deep'
+                }`}
+              >
+                {t("Back Cover", "मलपृष्ठ")}
+              </button>
+            </div>
 
-              <div className="border-t border-kashmir-mist/30 pt-4 flex justify-between items-center text-xs">
-                <div>
-                  <span className="font-sans font-semibold text-kashmir-deep block">
-                    {t(AUTHOR_INFO.name, AUTHOR_INFO.nameMr)}
-                  </span>
-                  <span className="font-mono text-[9px] text-kashmir-deep/60">
-                    {t("Debut Publication", "पहिलेच पुस्तक")}
+            {/* Book & Descriptions Frame */}
+            <div className="w-full flex flex-col md:flex-row items-center gap-8 p-6 md:p-8 rounded-3xl bg-white border border-kashmir-mist/20 shadow-xl shadow-kashmir-deep/5 min-h-[420px] relative overflow-hidden">
+              
+              {/* Dynamic Book Preview container */}
+              <div className="w-[180px] md:w-[220px] shrink-0 aspect-[9/16] rounded-xl overflow-hidden border border-kashmir-deep/15 shadow-2xl relative group">
+                <motion.img
+                  key={coverTab}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.4 }}
+                  src={coverTab === 'front' ? IMAGES.bookCover : IMAGES.bookBackCover}
+                  alt={coverTab === 'front' ? t("Book Front Cover", "पुस्तकाचे मुखपृष्ठ") : t("Book Back Cover", "पुस्तकाचे मलपृष्ठ")}
+                  className="w-full h-full object-cover select-none"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-white/5 pointer-events-none" />
+              </div>
+
+              {/* Cover text details */}
+              <div className="flex-1 text-left flex flex-col justify-between space-y-4">
+                {coverTab === 'front' ? (
+                  <div>
+                    <span className="font-mono text-[9px] uppercase tracking-widest text-golden-accent font-semibold block mb-1">
+                      {t("The Canvas Of Mountains", "पर्वतांचे सौंदर्य")}
+                    </span>
+                    <h4 className="font-serif text-xl font-semibold text-kashmir-deep leading-tight">
+                      {t("Yun Hasee Wadiyaan", "यूँ हसी वादियाँ")}
+                    </h4>
+                    <p className="font-sans text-[11px] text-kashmir-deep/50 font-mono mt-0.5">
+                      {t("By Ukiyogirl", "लेखिका: उकियोगर्ल")}
+                    </p>
+                    <p className="font-sans text-xs text-kashmir-deep/75 font-light leading-relaxed mt-4">
+                      {t(
+                        "The front cover captures the majestic snow-capped peaks of Kashmir rising into the pristine alpine blue sky, with the Indian national flag standing proud. It represents a raw, honest window to the Himalayas.",
+                        "मुखपृष्ठ निळ्या निरभ्र आकाशाखाली काश्मीरच्या बर्फाच्छादित डोंगररांगांची आणि सन्मानाने फडकणाऱ्या आपल्या राष्ट्रध्वजाची नितांत सुंदर झलक दर्शवते. हे निसर्गाचे आणि पर्वतांचे एक अस्सल दर्शन आहे."
+                      )}
+                    </p>
+                    <div className="mt-4 p-3 rounded-lg bg-beige-light border border-kashmir-mist/20 text-[10px] font-mono text-kashmir-lake leading-relaxed">
+                      💡 {t("English Translation: 'Oh, Beautiful Valleys'", "शीर्षकाचा अर्थ: 'Oh, Beautiful Valleys'")}
+                    </div>
+                  </div>
+                ) : (
+                  <div>
+                    <span className="font-mono text-[9px] uppercase tracking-widest text-golden-accent font-semibold block mb-1">
+                      {t("The Voice Within the Soil", "मातीचा आणि मनाचा आवाज")}
+                    </span>
+                    <h4 className="font-serif text-xl font-semibold text-kashmir-deep leading-tight">
+                      {t("Verbatim Poetic Musings", "अस्सल अनुभूतींची साद")}
+                    </h4>
+                    
+                    {/* Verbatim lines from Back Cover */}
+                    <div className="mt-4 space-y-3 border-l-2 border-golden-accent/30 pl-3">
+                      <p className="font-serif italic text-xs md:text-sm text-kashmir-deep/90 leading-relaxed font-semibold">
+                        {language === 'mr' ? (
+                          "“खरा निसर्ग, त्या-त्या मातीतील माणसं आणि त्यांच्याबरोबर आलेलेले अनुभव यांना सामोरे जातच तुम्ही स्वतःला शोधता...”"
+                        ) : (
+                          "“Confronting true nature, the people of that very soil, and the experiences that accompany them, you ultimately find yourself...”"
+                        )}
+                      </p>
+                      <p className="font-sans text-[11px] text-kashmir-deep/70 font-light leading-relaxed">
+                        {language === 'mr' ? (
+                          "“प्रत्येक क्षण त्याच क्षणात जगण्याच्या ऊर्मीने उकियोगर्लने पोरसवदा वयात काश्मीरमध्ये प्रत्यक्ष अनुभवलेली गोष्ट या पुस्तकात...”"
+                        ) : (
+                          "“Written during the edge of adulthood with the raw desire to live every moment in its transition; stories of Kashmir not searchable on Google...”"
+                        )}
+                      </p>
+                    </div>
+
+                    <div className="mt-5 pt-3 border-t border-kashmir-mist/20 flex flex-wrap gap-x-4 gap-y-2 text-[10px] text-kashmir-deep/60">
+                      <span>🏷️ {t("Price: ₹199", "किंमत: ₹१९९")}</span>
+                      <span>📖 {t("Publisher: Swayam Prakashan", "प्रकाशक: स्वयं प्रकाशन")}</span>
+                    </div>
+                  </div>
+                )}
+                
+                {/* Book Details Link / Reference info */}
+                <div className="pt-2">
+                  <span className="text-[10px] font-sans font-medium text-kashmir-lake bg-kashmir-light px-3 py-1.5 rounded-full inline-block leading-snug">
+                    {t(AUTHOR_INFO.details.recommendation, AUTHOR_INFO.details.recommendationMr)}
                   </span>
                 </div>
-                <div className="px-3 py-1 rounded-full bg-kashmir-deep/5 font-mono text-[10px] text-kashmir-lake font-medium">
-                  {t("Marathi & English Support", "मराठी आणि इंग्रजी")}
-                </div>
+
               </div>
 
             </div>
+
           </div>
 
         </div>

@@ -138,11 +138,11 @@ export default function Hero() {
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
-              className="relative z-10 w-[240px] md:w-[320px] aspect-[3/4] shadow-2xl shadow-black/80 rounded-lg overflow-hidden border border-white/15 transform hover:scale-[1.02] transition-transform duration-500"
+              className="relative z-10 w-[240px] md:w-[325px] aspect-[9/16] shadow-2xl shadow-black/80 rounded-lg overflow-hidden border border-white/15 transform hover:scale-[1.02] transition-transform duration-500"
             >
               <img
                 src={IMAGES.bookCover}
-                alt={t("Book Cover: Yoo 'Haseen' Waadiyan", "पुस्तकाचे मुखपृष्ठ: यूँ 'हसीं' वादियाँ")}
+                alt={t("Book Cover: Yun Hasee Wadiyaan", "पुस्तकाचे मुखपृष्ठ: यूँ 'हसी' वादियाँ")}
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
               />

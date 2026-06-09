@@ -1,7 +1,7 @@
 import { Destination, Quote, TimelineEvent, ExperienceLesson, GalleryImage, ReaderBenefit } from './types';
 import heroBgImg from './assets/images/kashmir_hero_1780045359772.png';
 import bookBackCoverImg from './assets/images/kashmir_hero_back_cover_1780116849448.png';
-import bookCoverImg from './assets/images/book_cover_1780045380435.png';
+import bookCoverImg from './assets/images/book_cover_1781027778685.png';
 import authorPortraitImg from './assets/images/author_portrait_1780045401192.png';
 import lakeMistyImg from './assets/images/kashmir_lake_1780045423673.png';
 import valleyGreenImg from './assets/images/kashmir_valley_1780045444779.png';
@@ -31,8 +31,8 @@ export const AUTHOR_INFO = {
   bioMr: 'पावनी जगताप "Ukiyogirl" या नावाने लिहिते. तिच्याकडे गोष्टी न्याहाळण्याची आणि अनुभवण्याची एक अतिशय शांत शैली आहे जी सहसा इतरांच्या नजरेतून सुटते — एखादा सहज झालेला संवाद, बदलणारे आकाश किंवा रोजच्या क्षणात दडलेली गोड भावना. आठवणी सुटून जाण्याआधी त्यांना जपण्याची लेखन हे तिचे माध्यम बनले. अतिशय कोवळ्या वयात तिने आपल्या प्रवासातील डायरी आणि वैयक्तिक विचारांना पहिल्या छापील पुस्तकाचे रूप दिले.',
   motivation: "She wasn't looking for the Kashmir people usually search for online. She was interested in the people she met, the stories she heard, and the feelings that stayed with her.",
   motivationMr: 'तिला सामान्यतः इंटरनेटवर शोधले जाणारे काश्मीर अनुभवायचे नव्हते. तिला रस होता तिथे भेटलेल्या माणसांमध्ये, त्यांच्या तोंडून ऐकलेल्या कथांमध्ये आणि प्रवासादरम्यान मनात कायम घर करून राहिलेल्या भावनांमध्ये.',
-  bookTitle: "Yoo 'Haseen' Waadiyan",
-  bookTitleMr: "यूँ 'हसीं' वादियाँ",
+  bookTitle: "Yun Hasee Wadiyaan",
+  bookTitleMr: "यूँ 'हसी' वादियाँ",
   bookSubtitle: "Glimpses of Kashmir (काश्मीर स्पर्शाची गोष्ट)",
   bookSubtitleMr: "काश्मीर स्पर्शाची गोष्ट (Glimpses of Kashmir)",
   publisher: 'Swayam Prakashan (स्वय प्रकाशन)',
@@ -256,8 +256,8 @@ export const GALLERY: GalleryImage[] = [
   {
     id: 'gal-5',
     src: IMAGES.bookCover,
-    caption: 'A physical copy of "Yoo Haseen Waadiyan" — a dream materialized over sleepless cold nights.',
-    captionMr: '"यूँ हसीं वादियाँ" पुस्तकाची छापील प्रत — थंड आणि जागून काढलेल्या रात्रींचे साकारलेले एक स्वप्न.',
+    caption: 'A physical copy of "Yun Hasee Wadiyaan" — a dream materialized over sleepless cold nights.',
+    captionMr: '"यूँ हसी वादियाँ" पुस्तकाची छापील प्रत — थंड आणि जागून काढलेल्या रात्रींचे साकारलेले एक स्वप्न.',
     category: 'The Book',
     categoryMr: 'पुस्तक स्वरूप',
     aspect: 'portrait'

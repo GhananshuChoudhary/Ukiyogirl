@@ -60,8 +60,8 @@ export default function Tribute() {
             </p>
             <p className="font-sans text-xs md:text-sm text-kashmir-mist/80 leading-relaxed font-light text-center">
               {t(
-                "This is my small way of appreciating the effort, curiosity, and sincerity behind \"Yoo Haseen Waadiyan.\"",
-                "\"यूँ हसीं वादियाँ\" च्या निर्मितीमागे असलेले प्रयत्न, तिचे कुतूहल आणि तिचा सच्चेपणा यांचे कौतुक करण्याचा हा माझा एक छोटासा प्रयत्न आहे."
+                "This is my small way of appreciating the effort, curiosity, and sincerity behind \"Yun Hasee Wadiyaan.\"",
+                "\"यूँ हसी वादियाँ\" च्या निर्मितीमागे असलेले प्रयत्न, तिचे कुतूहल आणि तिचा सच्चेपणा यांचे कौतुक करण्याचा हा माझा एक छोटासा प्रयत्न आहे."
               )}
             </p>
             <p className="font-sans text-xs md:text-sm text-golden-accent/90 font-mono text-center uppercase tracking-widest font-semibold mt-4">
