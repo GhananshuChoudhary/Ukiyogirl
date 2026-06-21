@@ -1,7 +1,7 @@
 import { Destination, Quote, TimelineEvent, ExperienceLesson, GalleryImage, ReaderBenefit } from './types';
 import heroBgImg from './assets/images/kashmir_hero_1780045359772.png';
-import bookBackCoverImg from './assets/images/kashmir_hero_back_cover_1780116849448.png';
-import bookCoverImg from './assets/images/book_cover_1781027778685.png';
+import bookBackCoverImg from './assets/images/WhatsApp_Image_2026_06_09_back.jpeg';
+import bookCoverImg from './assets/images/WhatsApp_Image_2026_06_09.jpeg';
 import authorPortraitImg from './assets/images/author_portrait_1780045401192.png';
 import lakeMistyImg from './assets/images/kashmir_lake_1780045423673.png';
 import valleyGreenImg from './assets/images/kashmir_valley_1780045444779.png';
