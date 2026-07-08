@@ -93,8 +93,8 @@ export default function Gallery() {
               }}
               className={`px-5 py-2 rounded-full font-sans text-xs uppercase tracking-wider transition-all duration-300 ${
                 selectedCategory === cat
-                  ? 'bg-kashmir-deep text-white shadow-md'
-                  : 'bg-white border border-kashmir-mist/30 hover:border-kashmir-lake/40 text-kashmir-deep/80'
+                  ? 'bg-kashmir-deep text-beige-light shadow-md'
+                  : 'bg-beige-light border border-kashmir-mist/30 hover:border-kashmir-lake/40 text-kashmir-deep/80'
               }`}
             >
               {getCategoryLabel(cat)}
@@ -119,7 +119,7 @@ export default function Gallery() {
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.5 }}
                   onClick={() => setLightboxIndex(idx)}
-                  className="break-inside-avoid relative rounded-2xl overflow-hidden group shadow-md border border-kashmir-mist/20 aspect-auto bg-white cursor-pointer"
+                  className="break-inside-avoid relative rounded-2xl overflow-hidden group shadow-md border border-kashmir-mist/20 aspect-auto bg-beige-light cursor-pointer"
                 >
                   
                   {/* Photo itself */}
@@ -131,17 +131,17 @@ export default function Gallery() {
                   />
 
                   {/* Dark Elegant Hover overlay details */}
-                  <div className="absolute inset-0 bg-kashmir-deep/75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-left">
+                  <div className="absolute inset-0 bg-kashmir-deep/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-left">
                     
                     {/* Zoom Icon overlay */}
-                    <div className="absolute top-4 right-4 p-2.5 rounded-full bg-white/10 text-white backdrop-blur-sm self-end">
+                    <div className="absolute top-4 right-4 p-2.5 rounded-full bg-beige-light/10 text-beige-light backdrop-blur-sm self-end">
                       <Eye className="h-4.5 w-4.5 text-golden-accent" />
                     </div>
 
                     <span className="font-mono text-[9px] uppercase tracking-widest text-golden-accent font-semibold block mb-1">
                       {t(img.category, img.categoryMr)}
                     </span>
-                    <p className="font-serif italic text-sm text-beige-light leading-relaxed mb-1">
+                    <p className="font-serif italic text-sm text-kashmir-deep leading-relaxed mb-1">
                       {t(img.caption, img.captionMr)}
                     </p>
                     <span className="font-mono text-[8px] text-kashmir-mist block mt-2">
@@ -163,13 +163,13 @@ export default function Gallery() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 z-100 bg-kashmir-deep/95 flex flex-col items-center justify-center p-4 md:p-8"
+              className="fixed inset-0 z-100 bg-beige-light/95 flex flex-col items-center justify-center p-4 md:p-8"
               onClick={() => setLightboxIndex(null)}
             >
               
               {/* Close Button top right */}
               <button
-                className="absolute top-6 right-6 p-3 rounded-full bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-colors z-20"
+                className="absolute top-6 right-6 p-3 rounded-full bg-beige-light/5 border border-beige-light/10 text-beige-light hover:bg-beige-light/10 transition-colors z-20"
                 onClick={() => setLightboxIndex(null)}
                 aria-label="Close Lightbox Zoomed Image"
               >
@@ -185,7 +185,7 @@ export default function Gallery() {
                 {/* Left trigger arrow */}
                 <button
                   onClick={handlePrev}
-                  className="hidden md:flex p-3.5 rounded-full bg-white/5 border border-white/10 text-white hover:bg-white/10 hover:border-white/20 transition-all cursor-pointer"
+                  className="hidden md:flex p-3.5 rounded-full bg-beige-light/5 border border-beige-light/10 text-beige-light hover:bg-beige-light/10 hover:border-beige-light/20 transition-all cursor-pointer"
                   aria-label="Previous Lightbox Image"
                 >
                   <ChevronLeft className="h-6 w-6" />
@@ -199,7 +199,7 @@ export default function Gallery() {
                     animate={{ scale: 1, opacity: 1 }}
                     exit={{ scale: 0.98, opacity: 0 }}
                     transition={{ duration: 0.4 }}
-                    className="relative bg-black/40 rounded-2xl overflow-hidden border border-white/5 max-h-[70vh] flex items-center justify-center"
+                    className="relative bg-kashmir-deep/40 rounded-2xl overflow-hidden border border-beige-light/10 max-h-[70vh] flex items-center justify-center"
                   >
                     <img
                       src={filteredGallery[lightboxIndex].src}
@@ -214,7 +214,7 @@ export default function Gallery() {
                     <span className="font-mono text-[9px] uppercase tracking-widest text-golden-accent">
                       {t(filteredGallery[lightboxIndex].category, filteredGallery[lightboxIndex].categoryMr)} ({lightboxIndex + 1} / {filteredGallery.length})
                     </span>
-                    <p className="font-serif italic text-sm md:text-base text-beige-light leading-relaxed">
+                    <p className="font-serif italic text-sm md:text-base text-kashmir-deep leading-relaxed">
                       {t(filteredGallery[lightboxIndex].caption, filteredGallery[lightboxIndex].captionMr)}
                     </p>
                   </div>
@@ -223,7 +223,7 @@ export default function Gallery() {
                 {/* Right trigger arrow */}
                 <button
                   onClick={handleNext}
-                  className="hidden md:flex p-3.5 rounded-full bg-white/5 border border-white/10 text-white hover:bg-white/10 hover:border-white/20 transition-all cursor-pointer"
+                  className="hidden md:flex p-3.5 rounded-full bg-beige-light/5 border border-beige-light/10 text-beige-light hover:bg-beige-light/10 hover:border-beige-light/20 transition-all cursor-pointer"
                   aria-label="Next Lightbox Image"
                 >
                   <ChevronRight className="h-6 w-6" />
@@ -235,14 +235,14 @@ export default function Gallery() {
               <div className="flex md:hidden gap-6 mt-6 z-10" onClick={(e) => e.stopPropagation()}>
                 <button
                   onClick={handlePrev}
-                  className="p-3.5 rounded-full bg-white/5 border border-white/10 text-beige-light"
+                  className="p-3.5 rounded-full bg-beige-light/5 border border-beige-light/10 text-kashmir-deep"
                   aria-label="Previous Image"
                 >
                   <ChevronLeft className="h-5 w-5" />
                 </button>
                 <button
                   onClick={handleNext}
-                  className="p-3.5 rounded-full bg-white/5 border border-white/10 text-beige-light"
+                  className="p-3.5 rounded-full bg-beige-light/5 border border-beige-light/10 text-kashmir-deep"
                   aria-label="Next Image"
                 >
                   <ChevronRight className="h-5 w-5" />

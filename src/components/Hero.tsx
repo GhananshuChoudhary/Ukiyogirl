@@ -1,24 +1,24 @@
 import { motion } from 'motion/react';
-import { ArrowRight, Sparkles, Compass } from 'lucide-react';
-import { IMAGES, AUTHOR_INFO } from '../data';
+import {  ArrowRight, Compass, Sparkles , ShoppingBag } from 'lucide-react';
+import { AUTHOR_INFO, IMAGES } from '../data';
 import { useLanguage } from '../LanguageContext';
 
 export default function Hero() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-kashmir-deep text-beige-light pt-24 pb-16">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#1B365D] text-kashmir-deep pt-24 pb-16">
       
-      {/* Absolute background image with high opacity and blend */}
-      <div className="absolute inset-0 z-0 select-none">
+      {/* Immersive Background Image full cover */}
+      <div className="absolute inset-0 z-0 select-none pointer-events-none">
         <img
           src={IMAGES.heroBg}
           alt={t("Kashmir Mountains under Morning Fog", "सकाळच्या धुक्यातील काश्मीरचे पर्वत")}
           className="w-full h-full object-cover opacity-35 object-center scale-105"
           referrerPolicy="no-referrer"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-kashmir-deep via-kashmir-deep/75 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-r from-kashmir-deep via-transparent to-kashmir-deep/50" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#1B365D] via-[#1B365D]/75 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1B365D] via-transparent to-[#1B365D]/50" />
       </div>
 
       {/* Shifting Morning Mist / Light Fog Layers */}
@@ -49,7 +49,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.15 }}
           >
-            <h1 className="font-serif text-5xl md:text-7xl font-light tracking-wide leading-none text-beige-light">
+            <h1 className="font-serif text-5xl md:text-7xl font-light tracking-wide leading-none text-[#FDFBF7]">
               {t("Introducing", "सादर करत आहोत")}
               <span className="block font-medium text-golden-accent font-sans tracking-tight mt-1 text-4xl md:text-6xl">
                 {t(AUTHOR_INFO.penName, AUTHOR_INFO.penNameMr)}
@@ -62,7 +62,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.3 }}
-            className="font-serif italic text-lg text-kashmir-mist tracking-wide"
+            className="font-serif italic text-lg text-[#D5E1ED] tracking-wide"
           >
             {t("and her debut publication: ", "आणि तिचे पहिले प्रकाशन: ")}
             <span className="text-white font-medium not-italic font-sans">{t(AUTHOR_INFO.bookTitle, AUTHOR_INFO.bookTitleMr)}</span> ({t(AUTHOR_INFO.bookSubtitle, AUTHOR_INFO.bookSubtitleMr)})
@@ -72,7 +72,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.35 }}
-            className="font-sans text-sm md:text-base text-kashmir-mist max-w-xl font-light leading-relaxed tracking-wide"
+            className="font-sans text-sm md:text-base text-[#D5E1ED] max-w-xl font-light leading-relaxed tracking-wide"
           >
             "{t(AUTHOR_INFO.tagline, AUTHOR_INFO.taglineMr)}"
           </motion.p>
@@ -90,13 +90,20 @@ export default function Hero() {
               {t("Explore the Journey", "प्रवास अनुभवून पहा")}
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
-
             <a
               href="#about-author"
               className="px-6 py-3 rounded-lg border border-white/20 bg-white/5 hover:bg-white/10 text-white font-sans text-xs uppercase tracking-widest transition-all duration-300 flex items-center gap-2"
             >
-              <Compass className="h-4 w-4 text-kashmir-mist" />
+              <Compass className="h-4 w-4 text-[#D5E1ED]" />
               {t("Meet Pavani", "पावनीची कहाणी")}
+            </a>
+            <a
+              href="https://akshardhara.com/products/yun-hasee-wadiyaan?_pos=1&_sid=1670c1a1d&_ss=r"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 rounded-lg bg-white text-kashmir-deep hover:bg-beige-light font-sans text-xs uppercase tracking-widest font-semibold transition-all duration-300 flex items-center gap-2 shadow-lg shadow-black/30 group"
+            >
+              <ShoppingBag className="h-4 w-4" /> {t("Buy the Book", "पुस्तक विकत घ्या")}
             </a>
           </motion.div>
 
@@ -108,7 +115,7 @@ export default function Hero() {
             className="mt-8 pt-6 border-t border-white/5 flex items-start gap-4"
           >
             <span className="font-serif text-3xl text-golden-accent/30 leading-none">“</span>
-            <p className="font-serif italic text-xs md:text-sm text-kashmir-mist/80 leading-relaxed max-w-sm">
+            <p className="font-serif italic text-xs md:text-sm text-[#D5E1ED]/80 leading-relaxed max-w-sm">
               "खरा निसर्ग आणि अव्याहत जीवन प्रत्यक्ष पाहण्यासाठी तुम्हाला 'निर्भय' व्हावे लागेल...!"
             </p>
           </motion.div>
@@ -156,6 +163,7 @@ export default function Hero() {
 
             {/* Drop Shadow effect on rustic tabletop placement */}
             <div className="absolute bottom-1 left-8 right-8 h-4 bg-black/60 filter blur-xl rounded-full z-0 opacity-80" />
+
           </div>
         </motion.div>
 
@@ -168,7 +176,7 @@ export default function Hero() {
           transition={{ duration: 1.8, repeat: Infinity }}
           className="flex flex-col items-center gap-1.5"
         >
-          <span className="font-mono text-[9px] uppercase tracking-widest text-kashmir-mist/40">{t("Scroll Down", "खाली सरकावा")}</span>
+          <span className="font-mono text-[9px] uppercase tracking-widest text-[#D5E1ED]/40">{t("Scroll Down", "खाली सरकावा")}</span>
           <div className="w-[1px] h-10 bg-gradient-to-b from-golden-accent/60 to-transparent" />
         </motion.div>
       </div>

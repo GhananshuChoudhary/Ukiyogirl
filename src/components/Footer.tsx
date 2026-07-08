@@ -1,4 +1,4 @@
-import { Mail, Phone, Heart, Sparkles } from 'lucide-react';
+import {  Mail, Phone, Heart, Sparkles , ShoppingBag } from 'lucide-react';
 import { AUTHOR_INFO } from '../data';
 import { useLanguage } from '../LanguageContext';
 
@@ -7,7 +7,7 @@ export default function Footer() {
   const { t } = useLanguage();
 
   return (
-    <footer className="bg-kashmir-deep text-beige-light border-t border-white/5 py-16 px-6 relative overflow-hidden">
+    <footer className="bg-[#1B365D] text-[#FDFBF7] border-t border-white/5 py-16 px-6 relative overflow-hidden">
       
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 relative z-10 text-left">
         
@@ -20,15 +20,14 @@ export default function Footer() {
             </span>
           </div>
           
-          <p className="font-sans text-xs text-kashmir-mist/80 max-w-sm font-light leading-relaxed">
+          <p className="font-sans text-xs text-[#D5E1ED]/80 max-w-sm font-light leading-relaxed">
             {t(
               "Made for Pavani, in celebration of her first published work.",
               "पावनीच्या पहिल्या प्रकाशित पुस्तकाच्या आनंदात, तिच्या एका जीवलग मित्राने बनवलेली ही भेट."
             )}
           </p>
-
           <p className="font-mono text-[10px] text-golden-accent tracking-widest uppercase">
-            "काश्मीर स्पर्शाची गोष्ट" • OH BEAUTIFUL VALLEYS
+            "काश्मीर स्पर्शाची गोष्ट" • THUS SMILED THE VALLEYS
           </p>
         </div>
 
@@ -38,7 +37,7 @@ export default function Footer() {
             {t("Publication Desk", "प्रकाशन व वितरण")}
           </h4>
           
-          <ul className="space-y-2.5 text-xs text-kashmir-mist/90 font-light">
+          <ul className="space-y-2.5 text-xs text-[#D5E1ED]/90 font-light">
             <li className="flex items-start gap-2">
               <span className="font-semibold text-white">{t("Publisher:", "प्रकाशक:")}</span> 
               <span>{t(AUTHOR_INFO.publisher, AUTHOR_INFO.publisherMr)}</span>
@@ -70,43 +69,47 @@ export default function Footer() {
             {t("Order & Inquiries", "नोंदणी आणि चौकशी")}
           </h4>
           
-          <p className="font-sans text-[11px] text-kashmir-mist/75 leading-relaxed font-light">
-            {t("To procure physical copies of this memoir, reach out directly to the publishing team:", "पुस्तकाची छापील प्रत घरपोच मागवण्यासाठी खालील Swayam प्रकाशन चमूशी थेट संपर्क साधा:")}
+          <p className="font-sans text-[11px] text-[#D5E1ED]/75 leading-relaxed font-light">
+            {t("To procure physical copies of this book, reach out directly to the author's team:", "पुस्तकाची छापील प्रत घरपोच मागवण्यासाठी खालील संपर्क माध्यमाद्वारे थेट संपर्क साधा:")}
           </p>
-
-          <div className="space-y-2 text-xs text-kashmir-mist">
+          <div className="space-y-2 text-xs text-[#D5E1ED]">
             
             <a 
-              href="mailto:swayam.prakashan@gmail.com"
+              href="mailto:pavanijagtap2407@gmail.com"
               className="flex items-center gap-2 hover:text-golden-accent transition-colors"
             >
               <Mail className="h-4 w-4 shrink-0 text-golden-accent/80" />
-              <span>swayam.prakashan@gmail.com</span>
+              <span>pavanijagtap2407@gmail.com</span>
             </a>
-
             <div className="flex items-center gap-2 hover:text-golden-accent transition-colors">
               <Phone className="h-4 w-4 shrink-0 text-golden-accent/80" />
-              <span>+91 9890811567 / 8888769659</span>
+              <span>+91 9850288349 / 9322001009</span>
             </div>
-
+            <a 
+              href="https://akshardhara.com/products/yun-hasee-wadiyaan?_pos=1&_sid=1670c1a1d&_ss=r"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 w-full px-4 py-2.5 rounded bg-golden-accent text-kashmir-deep hover:bg-beige-light font-sans text-[10px] uppercase tracking-widest font-semibold transition-all flex items-center justify-center gap-2"
+            >
+              <ShoppingBag className="h-3.5 w-3.5" />
+              {t("Buy from Akshardhara", "अक्षरधारावरून विकत घ्या")}
+            </a>
           </div>
         </div>
 
       </div>
 
       {/* Extreme low-level details */}
-      <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs tracking-wide text-kashmir-mist/50">
+      <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs tracking-wide text-[#D5E1ED]/50">
         
         <div className="flex items-center gap-2 font-light">
           <span>&copy; {currentYear} {t(AUTHOR_INFO.name, AUTHOR_INFO.nameMr)}. {t("All Rights Reserved.", "सर्व हक्क सुरक्षित.")}</span>
         </div>
-
         <div className="flex items-center gap-1 font-mono text-[9px] uppercase tracking-widest text-golden-accent">
           <span>{t("Made for Pavani with", "पावनीसाठी सस्नेह")}</span>
           <Heart className="h-3 w-3 fill-golden-accent stroke-none animate-pulse" />
           <span>{t("by her friend", "तिच्या एका मित्रातर्फे")}</span>
         </div>
-
       </div>
 
     </footer>

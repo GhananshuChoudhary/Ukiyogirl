@@ -38,7 +38,7 @@ export default function AboutAuthor() {
               <div className="absolute inset-0 bg-kashmir-deep rounded-2xl transform rotate-3 scale-[1.01] opacity-90 transition-transform duration-500 group-hover:rotate-1" />
               
               {/* Image presentation container showcasing real back cover artwork */}
-              <div className="relative z-10 aspect-[3/4] rounded-2xl overflow-hidden shadow-xl border border-white/5 bg-kashmir-deep transition-transform duration-500 group-hover:-translate-y-2 group-hover:translate-x-1">
+              <div className="relative z-10 aspect-[3/4] rounded-2xl overflow-hidden shadow-xl border border-beige-light/10 bg-kashmir-deep transition-transform duration-500 group-hover:-translate-y-2 group-hover:translate-x-1">
                 <img
                   src={IMAGES.bookBackCover}
                   alt={t("Book Back Cover Art", "पुस्तकाचे पाठीमागील कव्हर")}
@@ -79,7 +79,7 @@ export default function AboutAuthor() {
               {t(AUTHOR_INFO.bio, AUTHOR_INFO.bioMr)}
             </p>
 
-            <div className="p-6 rounded-2xl border border-golden-accent/15 bg-white/40 space-y-3 shadow-sm text-sm">
+            <div className="p-6 rounded-2xl border border-golden-accent/15 bg-beige-light/40 space-y-3 shadow-sm text-sm">
               <h4 className="font-serif text-base font-semibold text-kashmir-deep flex items-center gap-2">
                 <Compass className="h-4.5 w-4.5 text-golden-accent" />
                 {t("Her Driving Motivation", "तिची मुख्य प्रेरणा")}
@@ -97,7 +97,7 @@ export default function AboutAuthor() {
               
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 
-                <div className="p-3.5 rounded-xl bg-white/60 text-left">
+                <div className="p-3.5 rounded-xl bg-beige-light/60 text-left">
                   <span className="font-mono text-[9px] uppercase tracking-widest text-kashmir-deep/50 block">
                     {t("Publisher", "प्रकाशक")}
                   </span>
@@ -106,7 +106,7 @@ export default function AboutAuthor() {
                   </span>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-white/60 text-left">
+                <div className="p-3.5 rounded-xl bg-beige-light/60 text-left">
                   <span className="font-mono text-[9px] uppercase tracking-widest text-kashmir-deep/50 block">
                     {t("Volume Price", "किंमत")}
                   </span>
@@ -115,7 +115,7 @@ export default function AboutAuthor() {
                   </span>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-white/60 text-left">
+                <div className="p-3.5 rounded-xl bg-beige-light/60 text-left">
                   <span className="font-mono text-[9px] uppercase tracking-widest text-kashmir-deep/50 block">
                     {t("Format", "पृष्ठे (पाने)")}
                   </span>
@@ -124,7 +124,7 @@ export default function AboutAuthor() {
                   </span>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-white/60 text-left">
+                <div className="p-3.5 rounded-xl bg-beige-light/60 text-left">
                   <span className="font-mono text-[9px] uppercase tracking-widest text-kashmir-deep/50 block">
                     {t("Language Option", "भाषा पर्याय")}
                   </span>

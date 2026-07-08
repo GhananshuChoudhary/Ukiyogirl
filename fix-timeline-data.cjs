@@ -1,0 +1,30 @@
+const fs = require('fs');
+let content = fs.readFileSync('src/data.ts', 'utf8');
+
+content = content.replace(/'Step 1: The Spark'/g, "'The Spark'");
+content = content.replace(/'टप्पा १ : ठिणगी'/g, "'ठिणगी'");
+content = content.replace(/'Step 2: Departure'/g, "'Departure'");
+content = content.replace(/'टप्पा २ : प्रस्थान'/g, "'प्रस्थान'");
+content = content.replace(/'Step 3: The White Blanket'/g, "'The White Blanket'");
+content = content.replace(/'टप्पा ३ : पांढरी चादर'/g, "'पांढरी चादर'");
+content = content.replace(/'Step 4: Exploration'/g, "'Exploration'");
+content = content.replace(/'टप्पा ४ : अन्वेषण'/g, "'अन्वेषण'");
+content = content.replace(/'Step 5: Reality'/g, "'Reality'");
+content = content.replace(/'टप्पा ५ : वास्तव'/g, "'वास्तव'");
+content = content.replace(/'Step 6: The Context'/g, "'The Context'");
+content = content.replace(/'टप्पा ६ : संदर्भ'/g, "'संदर्भ'");
+content = content.replace(/'Step 7: Connections'/g, "'Connections'");
+content = content.replace(/'टप्पा ७ : नातेसंबंध'/g, "'नातेसंबंध'");
+content = content.replace(/'Step 8: Heritage'/g, "'Heritage'");
+content = content.replace(/'टप्पा ८ : वारसा'/g, "'वारसा'");
+content = content.replace(/'Step 9: Protection'/g, "'Protection'");
+content = content.replace(/'टप्पा ९ : संरक्षण'/g, "'संरक्षण'");
+content = content.replace(/'Step 10: Rehabilitation'/g, "'Rehabilitation'");
+content = content.replace(/'टप्पा १० : पुनर्वसन'/g, "'पुनर्वसन'");
+content = content.replace(/'Step 11: Belonging'/g, "'Belonging'");
+content = content.replace(/'टप्पा ११ : आपुलकी'/g, "'आपुलकी'");
+content = content.replace(/'Step 12: Transformation'/g, "'Transformation'");
+content = content.replace(/'टप्पा १२ : परिवर्तन'/g, "'परिवर्तन'");
+
+fs.writeFileSync('src/data.ts', content);
+console.log("Fixed data.ts stages");

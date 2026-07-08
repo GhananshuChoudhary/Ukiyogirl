@@ -25,7 +25,7 @@ export default function QuoteCarousel() {
   const activeQuote = QUOTES[currentIndex];
 
   return (
-    <section id="quotes" className="py-20 px-4 sm:px-6 bg-[#0E1A2F] relative text-beige-light">
+    <section id="quotes" className="py-20 px-4 sm:px-6 bg-[#0E1A2F] relative text-[#FDFBF7]">
       
       {/* Absolute serene dark aesthetic backdrop - lightweight, flat dark color to prevent rendering glitches */}
       <div className="absolute inset-0 z-0 bg-[#0E1A2F] pointer-events-none" />
@@ -38,7 +38,7 @@ export default function QuoteCarousel() {
             <QuoteIcon className="h-4 w-4 text-golden-accent" />
             {t("Book Quotes & Excerpts", "पुस्तकातील निवडक उतारे आणि विचार")}
           </span>
-          <h2 className="font-serif text-2xl md:text-5xl font-light">
+          <h2 className="font-serif text-2xl md:text-5xl font-light text-white">
             {t("Memories in Lettering", "शब्दांत कोरलेल्या देखण्या आठवणी")}
           </h2>
           <div className="w-12 h-[1px] bg-golden-accent/45 my-2" />
@@ -68,7 +68,7 @@ export default function QuoteCarousel() {
                     <span className="font-mono text-[8px] sm:text-[9px] uppercase tracking-[0.2em] text-golden-accent/70 block">
                       {t("Original Excerpt (मराठी)", "मूळ उतारा (मराठी)")}
                     </span>
-                    <p className="font-serif italic text-sm sm:text-lg md:text-xl font-medium leading-relaxed text-yellow-50/90 text-center select-none block max-w-2xl px-2">
+                    <p className="font-serif italic text-sm sm:text-lg md:text-xl font-medium leading-relaxed text-[#FDFBF7] text-center select-none block max-w-2xl px-2">
                       "{activeQuote.bookText}"
                     </p>
                   </div>
@@ -82,7 +82,7 @@ export default function QuoteCarousel() {
                   <span className="font-mono text-[8px] sm:text-[9px] uppercase tracking-[0.2em] text-golden-accent/70 block">
                     {t("Reflective English Translation", "विचारशील इंग्रजी अनुवाद")}
                   </span>
-                  <p className="font-serif italic text-xs sm:text-sm md:text-base text-kashmir-mist leading-relaxed font-light max-w-2xl px-2">
+                  <p className="font-serif italic text-xs sm:text-sm md:text-base text-[#D5E1ED] leading-relaxed font-light max-w-2xl px-2">
                     "{activeQuote.text}"
                   </p>
                 </div>
@@ -90,7 +90,7 @@ export default function QuoteCarousel() {
                 {/* Footnote metadata */}
                 <div className="flex items-center gap-2 bg-white/5 px-3 py-1 rounded-full border border-white/5 mt-1">
                   <BookOpen className="h-3 w-3 text-golden-accent" />
-                  <span className="font-mono text-[9px] uppercase tracking-widest text-kashmir-mist font-semibold">
+                  <span className="font-mono text-[9px] uppercase tracking-widest text-[#D5E1ED] font-semibold">
                     {t(activeQuote.chapter, activeQuote.chapterMr)}
                   </span>
                   <span className="text-white/20">•</span>
@@ -108,7 +108,7 @@ export default function QuoteCarousel() {
             
             <button
               onClick={prevQuote}
-              className="p-3.5 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 transition-all text-beige-light"
+              className="p-3.5 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 transition-all text-[#FDFBF7]"
               aria-label="Previous Book Quote"
             >
               <ChevronLeft className="h-5 w-5" />
@@ -130,7 +130,7 @@ export default function QuoteCarousel() {
 
             <button
               onClick={nextQuote}
-              className="p-3.5 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 transition-all text-beige-light"
+              className="p-3.5 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 transition-all text-[#FDFBF7]"
               aria-label="Next Book Quote"
             >
               <ChevronRight className="h-5 w-5" />

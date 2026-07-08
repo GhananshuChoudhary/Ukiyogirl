@@ -8,10 +8,12 @@ import QuoteCarousel from './components/QuoteCarousel';
 import Gallery from './components/Gallery';
 import Lessons from './components/Lessons';
 import Readers from './components/Readers';
+import BookReviews from './components/BookReviews';
 import Tribute from './components/Tribute';
 import Footer from './components/Footer';
 import { AUTHOR_INFO } from './data';
 import { LanguageProvider } from './LanguageContext';
+import { ThemeProvider } from './ThemeContext';
 
 function ReadingProgressBar() {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -44,52 +46,57 @@ function ReadingProgressBar() {
 
 export default function App() {
   return (
-    <LanguageProvider>
-      <div className="min-h-screen bg-beige-light flex flex-col antialiased selection:bg-golden-accent/35 selection:text-kashmir-deep overflow-x-hidden">
-        
-        {/* Dynamic scroll indicator */}
-        <ReadingProgressBar />
-
-        {/* Dynamic Floating Head Navigation bar */}
-        <Navbar authorName={AUTHOR_INFO.penName} authorNameMr={AUTHOR_INFO.penNameMr} />
-
-        {/* Main Narrative Blocks */}
-        <main className="flex-grow">
+    <ThemeProvider>
+      <LanguageProvider>
+        <div className="min-h-screen bg-beige-light flex flex-col antialiased selection:bg-golden-accent/35 selection:text-kashmir-deep overflow-x-hidden">
           
-          {/* Full screen majestic hero display */}
-          <Hero />
+          {/* Dynamic scroll indicator */}
+          <ReadingProgressBar />
 
-          {/* Beautiful storyline & memoir objectives */}
-          <AboutBook />
+          {/* Dynamic Floating Head Navigation bar */}
+          <Navbar authorName={AUTHOR_INFO.penName} authorNameMr={AUTHOR_INFO.penNameMr} />
 
-          {/* Meet the author contemplative details */}
-          <AboutAuthor />
+          {/* Main Narrative Blocks */}
+          <main className="flex-grow">
+            
+            {/* Full screen majestic hero display */}
+            <Hero />
 
-          {/* Dynamic Interactive locations cards */}
-          <Journey />
+            {/* Beautiful storyline & memoir objectives */}
+            <AboutBook />
 
-          {/* Glassmorphic quote slider with original Marathi translations */}
-          <QuoteCarousel />
+            {/* Meet the author contemplative details */}
+            <AboutAuthor />
 
-          {/* Pinterest-style staggered masonry with premium Lightbox preview */}
-          <Gallery />
+            {/* Dynamic Interactive locations cards */}
+            <Journey />
 
-          {/* Experiences & life lessons learnt timeline */}
-          <Lessons />
+            {/* Glassmorphic quote slider with original Marathi translations */}
+            <QuoteCarousel />
 
-          {/* Targeting key benefit readers metrics */}
-          <Readers />
+            {/* Pinterest-style staggered masonry with premium Lightbox preview */}
+            <Gallery />
 
-          {/* Heartfelt friendship dedication highlight */}
-          <Tribute />
+            {/* Experiences & life lessons learnt timeline */}
+            <Lessons />
 
-        </main>
+            {/* Targeting key benefit readers metrics */}
+            <Readers />
 
-        {/* Structured coordinates, copyrights and publishing orders footer */}
-        <Footer />
+            {/* Readers feedback & live interactive review board */}
+            <BookReviews />
 
-      </div>
-    </LanguageProvider>
+            {/* Heartfelt friendship dedication highlight */}
+            <Tribute />
+
+          </main>
+
+          {/* Structured coordinates, copyrights and publishing orders footer */}
+          <Footer />
+
+        </div>
+      </LanguageProvider>
+    </ThemeProvider>
   );
 }
 

@@ -6,7 +6,7 @@ export default function Tribute() {
   const { t } = useLanguage();
 
   return (
-    <section id="tribute" className="py-24 px-6 bg-kashmir-deep relative overflow-hidden text-beige-light">
+    <section id="tribute" className="py-24 px-6 bg-[#1B365D] relative overflow-hidden text-[#FDFBF7]">
       
       {/* Absolute misty visuals backdrop */}
       <div className="absolute inset-0 z-0">
@@ -19,7 +19,6 @@ export default function Tribute() {
       </div>
 
       <div className="max-w-4xl mx-auto relative z-10 text-center">
-
         {/* Tribute Frame */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -29,62 +28,56 @@ export default function Tribute() {
           className="glass p-10 md:p-16 rounded-3xl border border-white/10 shadow-2xl space-y-8 max-w-3xl mx-auto"
         >
           
-          {/* Sparkle emblem */}
           <div className="inline-flex p-4 rounded-full bg-white/5 border border-white/10 text-golden-accent">
-            <Heart className="h-6 w-6 text-golden-accent animate-pulse" />
+            <Heart className="h-8 w-8 animate-pulse-slow fill-golden-accent/20" />
           </div>
 
-          <div className="space-y-3">
-            <span className="font-mono text-[9px] uppercase tracking-widest text-golden-accent font-semibold block">
-              {t("A Friend's Message", "जीवलग मित्राचे दोन शब्द")}
-            </span>
-            <h2 className="font-serif text-3xl md:text-5xl font-light leading-tight animate-fade-in">
-              {t("Made for Pavani", "पावनीसाठी एक छोटीशी भेट")}
+          <div className="space-y-6 max-w-2xl mx-auto">
+            <h2 className="font-serif text-3xl md:text-5xl font-light tracking-wide text-white">
+              {t("For Pavani,", "पावनीसाठी,")}
             </h2>
-            <div className="w-16 h-[1px] bg-golden-accent/40 mx-auto my-3" />
-          </div>
+            
+            <p className="font-sans text-sm md:text-base text-[#D5E1ED] font-light leading-relaxed">
+              {t(
+                "This website exists because I wanted to celebrate someone who had the courage to turn her experiences into words.",
+                "ही वेबसाइट साकारण्यामागचा उद्देश एका अशा व्यक्तीचे कौतुक करणे आहे, जिच्यात स्वतःच्या अनुभवांना शब्दांत मांडण्याचे धैर्य होते."
+              )}
+            </p>
 
-          <blockquote className="font-serif italic text-base md:text-lg text-yellow-55/90 leading-relaxed max-w-2xl mx-auto">
-            {t(
-              "\"This website exists because I wanted to celebrate someone who had the courage to turn her experiences into words.\"",
-              "“हे संकेतस्थळ तयार करण्यामागचं कारण म्हणजे, ज्या व्यक्तीने स्वतःचे अनुभव शब्दांत मांडण्याचं धाडस केलं, तिचा हा प्रवास मला साजरा करायचा होता.”"
-            )}
-          </blockquote>
-
-          <div className="pt-4 space-y-4 max-w-xl mx-auto text-center">
-            <p className="font-sans text-xs md:text-sm text-kashmir-mist/80 leading-relaxed font-light text-center">
+            <p className="font-sans text-sm md:text-base text-[#D5E1ED] font-light leading-relaxed">
               {t(
                 "Long before there was a published book, there were notebooks, observations, questions, and countless moments that deserved to be remembered. Watching those memories become a real book has been inspiring.",
-                "एक छापील पुस्तक प्रत्यक्षात येण्यापूर्वी अनेक डायऱ्या, निरीक्षणं, प्रश्न आणि जपून ठेवावे असे असंख्य अनमोल क्षण होते, जे कायम लक्षात राहावेत. त्या आठवणी एका खऱ्या पुस्तकाच्या रूपाने आकाराला येताना पाहणं अतिशय प्रेरणादायी आहे."
+                "पुस्तकाच्या रूपात प्रकाशित होण्यापूर्वी डायऱ्यांमधील पाने, बारकाईने केलेले निरीक्षण, मनातले प्रश्न आणि अशा असंख्य आठवणी होत्या ज्या जपून ठेवण्यासारख्या होत्या. त्या सर्व आठवणींचे एका देखण्या पुस्तकात रूपांतर होताना पाहणे अत्यंत प्रेरणादायी ठरले आहे."
               )}
             </p>
-            <p className="font-sans text-xs md:text-sm text-kashmir-mist/80 leading-relaxed font-light text-center">
+
+            <p className="font-sans text-sm md:text-base text-[#D5E1ED] font-light leading-relaxed">
               {t(
-                "This is my small way of appreciating the effort, curiosity, and sincerity behind \"Yun Hasee Wadiyaan.\"",
-                "\"यूँ हसी वादियाँ\" च्या निर्मितीमागे असलेले प्रयत्न, तिचे कुतूहल आणि तिचा सच्चेपणा यांचे कौतुक करण्याचा हा माझा एक छोटासा प्रयत्न आहे."
+                'This is my small way of appreciating the effort, curiosity, and sincerity behind "Yun Hasee Wadiyaan."',
+                "'यूँ हसी वादियाँ' या पुस्तकामागे घेतलेले अफाट परिश्रम, जिज्ञासा आणि प्रामाणिकपणाचे कौतुक करण्याचा हा माझा एक छोटासा प्रयत्न आहे."
               )}
-            </p>
-            <p className="font-sans text-xs md:text-sm text-golden-accent/90 font-mono text-center uppercase tracking-widest font-semibold mt-4">
-              {t("Proud of you, Pavani.", "तुझा खूप खूप अभिमान वाटतो, पावनी!")}
             </p>
           </div>
 
-          {/* Tribute Signature Detail */}
-          <div className="border-t border-white/5 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
-            <div className="flex items-center gap-2">
-              <Scroll className="h-4 w-4 text-golden-accent" />
-              <span className="font-serif italic text-kashmir-mist">
-                {t("\" काश्मीर स्पर्शाची गोष्ट \" — A Touch of Kashmir", "\"काश्मीर स्पर्शाची गोष्ट\" — काश्मीरचा सुखद आणि अद्भुत स्पर्श")}
-              </span>
-            </div>
-            
-            <div className="text-center md:text-right flex flex-col md:items-end gap-1 font-sans text-[10px] text-kashmir-mist font-light">
-              <span>{t("By her proud friend • 2026", "एका जीवलग मित्राकडून सस्नेह • २०२६")}</span>
-              <span className="text-golden-accent font-semibold tracking-wider font-mono">{t("Published: 7 June 2026", "प्रकाशन: ७ जून २०२६")}</span>
-            </div>
+          <div className="pt-6">
+            <div className="w-16 h-[1px] bg-golden-accent/40 mx-auto" />
+            <p className="font-serif italic text-xl text-golden-accent mt-6 font-medium">
+              {t("Proud of you, Pavani.", "मला तुझा खूप अभिमान आहे, पावनी.")}
+            </p>
+            <p className="font-sans text-xs uppercase tracking-widest text-[#D5E1ED]/60 mt-2">
+              {t("Soham", "सोहम")}
+            </p>
           </div>
 
         </motion.div>
+
+        {/* Small thematic detail below the tribute */}
+        <div className="mt-16 flex flex-col items-center gap-3">
+          <Scroll className="h-5 w-5 text-white/20" />
+          <p className="font-mono text-[9px] uppercase tracking-widest text-white/40">
+            {t("End of the Digital Experience", "डिजिटल सफरीची सांगता")}
+          </p>
+        </div>
 
       </div>
     </section>

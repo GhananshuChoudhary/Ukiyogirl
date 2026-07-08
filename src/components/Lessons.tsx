@@ -56,7 +56,7 @@ export default function Lessons() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-50px' }}
                 transition={{ duration: 0.8, delay: index * 0.18 }}
-                className="p-8 rounded-3xl bg-white border border-kashmir-mist/20 hover:border-golden-accent/25 transition-all duration-300 relative flex flex-col justify-between hover:shadow-xl group"
+                className="p-8 rounded-3xl bg-beige-light border border-kashmir-mist/20 hover:border-golden-accent/25 transition-all duration-300 relative flex flex-col justify-between hover:shadow-xl group"
               >
                 
                 {/* Header indicators */}

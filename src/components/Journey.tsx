@@ -50,7 +50,7 @@ export default function Journey() {
                     className={`w-full rounded-2xl border transition-all duration-300 overflow-hidden ${
                       isSelected
                         ? 'bg-kashmir-deep border-kashmir-deep text-beige-light shadow-lg shadow-kashmir-deep/15'
-                        : 'bg-white/60 border-kashmir-mist/30 hover:border-kashmir-lake/45 text-kashmir-deep'
+                        : 'bg-beige-light/60 border-kashmir-mist/30 hover:border-kashmir-lake/45 text-kashmir-deep'
                     }`}
                   >
                     <button
@@ -70,7 +70,7 @@ export default function Journey() {
                       <div className="space-y-1 flex-1">
                         <div className="flex items-center gap-2">
                           <span className={`font-mono text-[8px] uppercase tracking-wider px-1.5 py-0.5 rounded ${
-                            isSelected ? 'bg-white/10 text-golden-accent' : 'bg-kashmir-light text-kashmir-lake font-bold'
+                            isSelected ? 'bg-beige-light/10 text-golden-accent' : 'bg-kashmir-light text-kashmir-lake font-bold'
                           }`}>
                             {t(dest.tag, dest.tagMr)}
                           </span>
@@ -88,7 +88,7 @@ export default function Journey() {
                           animate={{ height: 'auto', opacity: 1 }}
                           exit={{ height: 0, opacity: 0 }}
                           transition={{ duration: 0.3, ease: 'easeInOut' }}
-                          className="xl:hidden border-t border-white/10 px-5 pb-5 pt-4 space-y-4 text-left overflow-hidden bg-black/10"
+                          className="xl:hidden border-t border-beige-light/10 px-5 pb-5 pt-4 space-y-4 text-left overflow-hidden bg-beige-light/10"
                         >
                           {/* Banner Image */}
                           <div className="h-44 w-full relative rounded-xl overflow-hidden select-none">
@@ -107,11 +107,11 @@ export default function Journey() {
                           </p>
 
                           {/* Stats */}
-                          <div className="grid grid-cols-2 gap-3 pt-3 border-t border-white/10">
+                          <div className="grid grid-cols-2 gap-3 pt-3 border-t border-beige-light/10">
                             <div className="flex items-start gap-1.5">
                               <Calendar className="h-3.5 w-3.5 text-golden-accent mt-0.5 shrink-0" />
                               <div>
-                                <span className="font-mono text-[8px] uppercase tracking-widest text-[#a8b8cc] block">
+                                <span className="font-mono text-[8px] uppercase tracking-widest text-kashmir-mist block">
                                   {t("Best Season", "उत्तम काळ")}
                                 </span>
                                 <p className="font-sans text-[10px] sm:text-xs font-semibold text-beige-light">
@@ -123,7 +123,7 @@ export default function Journey() {
                             <div className="flex items-start gap-1.5">
                               <Sun className="h-3.5 w-3.5 text-golden-accent mt-0.5 shrink-0" />
                               <div>
-                                <span className="font-mono text-[8px] uppercase tracking-widest text-[#a8b8cc] block">
+                                <span className="font-mono text-[8px] uppercase tracking-widest text-kashmir-mist block">
                                   {t("Atmospheric Climate", "हवामान")}
                                 </span>
                                 <p className="font-sans text-[10px] sm:text-xs font-semibold text-beige-light">
@@ -134,9 +134,9 @@ export default function Journey() {
                           </div>
 
                           {/* Narrative Quote block */}
-                          <div className="p-3.5 rounded-lg bg-white/5 border border-white/5 flex gap-2.5 items-center">
+                          <div className="p-3.5 rounded-lg bg-beige-light/5 border border-beige-light/10 flex gap-2.5 items-center">
                             <BookOpen className="h-4 w-4 text-golden-accent shrink-0" />
-                            <span className="font-serif italic text-xs leading-relaxed text-[#b4c3d4]">
+                            <span className="font-serif italic text-xs leading-relaxed text-kashmir-mist">
                               {language === 'mr' ? (
                                 `"धुक्याची प्रत्येक नवीन लाट आपल्यासोबत शतकांचा इतिहास वाहून आणते. ${dest.nameMr} मध्ये असताना मी खऱ्या शांततेमध्ये कशा प्रकारे लिहावे हे शिकले."`
                               ) : (
@@ -163,7 +163,7 @@ export default function Journey() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.5, ease: 'easeOut' }}
-                className="rounded-3xl overflow-hidden border border-kashmir-mist/25 bg-white shadow-xl flex flex-col h-full"
+                className="rounded-3xl overflow-hidden border border-kashmir-mist/25 bg-beige-light shadow-xl flex flex-col h-full"
               >
                 
                 {/* Large high-resolution visual banner */}
