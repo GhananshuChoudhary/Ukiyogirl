@@ -101,7 +101,7 @@ export default function Hero() {
               href="https://akshardhara.com/products/yun-hasee-wadiyaan?_pos=1&_sid=1670c1a1d&_ss=r"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 rounded-lg bg-white text-kashmir-deep hover:bg-beige-light font-sans text-xs uppercase tracking-widest font-semibold transition-all duration-300 flex items-center gap-2 shadow-lg shadow-black/30 group"
+              className="px-6 py-3 rounded-lg border border-white/20 bg-white/5 hover:bg-white/10 text-white font-sans text-xs uppercase tracking-widest transition-all duration-300 flex items-center gap-2"
             >
               <ShoppingBag className="h-4 w-4" /> {t("Buy the Book", "पुस्तक विकत घ्या")}
             </a>
